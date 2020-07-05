@@ -6,78 +6,44 @@ Route::view('/', 'home')->name('home');
 
 Route::view('/quienes-somos', 'quienes_somos')->name('quienesSomos');
 
-Route::get('/nuestra-historia', function () {
-    return view('nuestra_historia');
-})->name('nuestraHistoria');
+Route::view('/nuestra-historia','nuestra_historia')->name('nuestraHistoria');
 
-Route::get('/nuestra-filosofia', function () {
-    return view('nuestra_filosofia');
-})->name('nuestraFilosofia');
+Route::view('/nuestra-filosofia','nuestra_historia')->name('nuestraFilosofia');
 
-Route::get('/efecto-multiplicador', function () {
-    return view('efecto_multiplicador');
-})->name('efectoMultiplicador');
+Route::view('/efecto-multiplicador','efecto_multiplicador')->name('efectoMultiplicador');
 
-Route::get('/nuestro-equipo', function () {
-    return view('nuestro_equipo');
-})->name('nuestroEquipo');
+Route::view('/nuestro-equipo','nuestro_equipo')->name('nuestroEquipo');
 
 Route::view('/que-hacemos', 'que_hacemos')->name('queHacemos');
 
-Route::get('/nuestro-programa', function () {
-    return view('nuestro_programa');
-})->name('nuestroPrograma');
+Route::view('/nuestro-programa','nuestro_programa')->name('nuestroPrograma');
 
-Route::get('/enfoque-en-la-calidad', function () {
-    return view('enfoque_en_la_calidad');
-})->name('enfoqueEnLaCalidad');
+Route::view('/enfoque-en-la-calidad','enfoque_en_la_calidad')->name('enfoqueEnLaCalidad');
 
-Route::get('/impacto', function () {
-    return view('impacto');
-})->name('impacto');
+Route::view('/impacto','impacto')->name('impacto');
 
 Route::view('/nuestros-centros', 'nuestros_centros')->name('nuestrosCentros');
 
-Route::get('/cs-hilasal', function () {
-    return view('cs_hilasal');
-})->name('csHilasal');
+Route::view('/cs-hilasal','cs_hilasal')->name('csHilasal');
 
-Route::get('/cs-adoc', function () {
-    return view('cs_adoc');
-})->name('csAdoc');
+Route::view('/cs-adoc','cs_adoc')->name('csAdoc');
 
-Route::get('/cs-fam-san-miguelito', function () {
-    return view('cs_fam_sanmiguelito');
-})->name('csFAMSanMiguelito');
+Route::view('/cs-fam-san-miguelito','cs_fam_sanmiguelito')->name('csFAMSanMiguelito');
 
-Route::get('/cs-fpoma', function () {
-    return view('cs_fpoma');
-})->name('csPoma');
+Route::view('/cs-fpoma','cs_fpoma')->name('csFPoma');
 
-Route::get('/cs-merlet', function () {
-    return view('cs_merlet');
-})->name('csMerlet');
+Route::view('/cs-merlet','cs_merlet')->name('csMerlet');
 
-Route::get('/cs-jupa', function () {
-    return view('cs_jupa');
-})->name('csJupa');
+Route::view('/cs-jupa','cs_jupa')->name('csJupa');
 
-Route::get('/cs-raices', function () {
-    return view('cs_raices');
-})->name('csRaices');
+Route::view('/cs-raices','cs_raices')->name('csRaices');
 
-Route::get('/cs-grupo-Q', function () {
-    return view('cs_grupoq');
-})->name('csGrupoQ');
+Route::view('/cs-grupo-Q','cs_grupoq')->name('csGrupoQ');
 
-Route::get('/cs-fam-cdn', function () {
-    return view('cs_fam_cdn');
-})->name('csFAMCDN');
+Route::view('/cs-fam-cdn','cs_fam_cdn')->name('csFAMCDN');
 
-Route::get('/cs-provivienda', function () {
-    return view('cs_fpro');
-})->name('csProvivienda');
+Route::view('/cs-provivienda','cs_fpro')->name('csProvivienda');
 
-Route::view('/nuestros-aliados', 'nuestros_aliados')->name('nuestrosAliados');
+Route::view('/nuestros-aliados','nuestros_aliados')->name('nuestrosAliados');
 
-Route::view('/contactanos', 'contactanos')->name('contactanos');
+Route::view('/contactanos','contactanos')->name('contactanos');
