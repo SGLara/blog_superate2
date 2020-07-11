@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'superate'], function () {
-    Route::get('/', 'NavbarController@homeView')->name('home');
+    Route::get('/', 'NavbarController@homeView')->name('inicio');
     Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
     Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
 
