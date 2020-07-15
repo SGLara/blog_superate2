@@ -11,140 +11,140 @@ class NavbarRoutesTest extends TestCase
     /** @test */
     function homeTest()
     {
-        $this->get('superate/')
+        $this->get('inicio')
             ->assertStatus(200);
     }
 
     /** @test */
     function nuestraHistoriaTest()
     {
-        $this->get('superate/quienes-somos/nuestra-historia')
+        $this->get('quienes-somos/nuestra-historia')
             ->assertStatus(200);
     }
 
     /** @test */
     function nuestraFilosofiaTest()
     {
-        $this->get('superate/quienes-somos/nuestra-filosofia')
+        $this->get('quienes-somos/nuestra-filosofia')
             ->assertStatus(200);
     }
 
     /** @test */
     function efectoMultiplicadorTest()
     {
-        $this->get('superate/quienes-somos/efecto-multiplicador')
+        $this->get('quienes-somos/efecto-multiplicador')
             ->assertStatus(200);
     }
 
     /** @test */
     function nuestroEquipoTest()
     {
-        $this->get('superate/quienes-somos/nuestro-equipo')
+        $this->get('quienes-somos/nuestro-equipo')
             ->assertStatus(200);
     }
 
     /** @test */
     function nuestroProgramaTest()
     {
-        $this->get('superate/que-hacemos/nuestro-programa')
+        $this->get('que-hacemos/nuestro-programa')
             ->assertStatus(200);
     }
 
     /** @test */
     function enfoqueEnLaCalidadTest()
     {
-        $this->get('superate/que-hacemos/enfoque-en-la-calidad')
+        $this->get('que-hacemos/enfoque-en-la-calidad')
             ->assertStatus(200);
     }
 
     /** @test */
     function impactoTest()
     {
-        $this->get('superate/que-hacemos/impacto')
+        $this->get('que-hacemos/impacto')
             ->assertStatus(200);
     }
 
     /** @test */
     function csHilasalTest()
     {
-        $this->get('superate/nuestros-centros/cs-hilasal')
+        $this->get('nuestros-centros/cs-hilasal')
             ->assertStatus(200);
     }
 
     /** @test */
     function csAdocTest()
     {
-        $this->get('superate/nuestros-centros/cs-adoc')
+        $this->get('nuestros-centros/cs-adoc')
             ->assertStatus(200);
     }
 
     /** @test */
     function csFamSanMiguelitoTest()
     {
-        $this->get('superate/nuestros-centros/cs-fam-san-miguelito')
+        $this->get('nuestros-centros/cs-fam-san-miguelito')
             ->assertStatus(200);
     }
 
     /** @test */
     function csFPomaTest()
     {
-        $this->get('superate/nuestros-centros/cs-fpoma')
+        $this->get('nuestros-centros/cs-fpoma')
             ->assertStatus(200);
     }
 
     /** @test */
     function csMerletTest()
     {
-        $this->get('superate/nuestros-centros/cs-merlet')
+        $this->get('nuestros-centros/cs-merlet')
             ->assertStatus(200);
     }
 
     /** @test */
     function csJupaTest()
     {
-        $this->get('superate/nuestros-centros/cs-jupa')
+        $this->get('nuestros-centros/cs-jupa')
             ->assertStatus(200);
     }
 
     /** @test */
     function csRaicesTest()
     {
-        $this->get('superate/nuestros-centros/cs-raices')
+        $this->get('nuestros-centros/cs-raices')
             ->assertStatus(200);
     }
 
     /** @test */
     function csGrupoQTest()
     {
-        $this->get('superate/nuestros-centros/cs-grupo-Q')
+        $this->get('nuestros-centros/cs-grupo-Q')
             ->assertStatus(200);
     }
 
     /** @test */
     function csFamCDNTest()
     {
-        $this->get('superate/nuestros-centros/cs-fam-cdn')
+        $this->get('nuestros-centros/cs-fam-cdn')
             ->assertStatus(200);
     }
 
     /** @test */
     function csProviviendaTest()
     {
-        $this->get('superate/nuestros-centros/cs-provivienda')
+        $this->get('nuestros-centros/cs-provivienda')
             ->assertStatus(200);
     }
 
     /** @test */
     function nuestrosAliadosTest()
     {
-        $this->get('superate/nuestros-aliados')
+        $this->get('nuestros-aliados')
             ->assertStatus(200);
     }
 
     /** @test */
     function contactanosTest()
     {
-        $this->get('superate/contactanos')
+        $this->get('contactanos')
             ->assertStatus(200);
     }
 }
