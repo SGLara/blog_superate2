@@ -16,7 +16,7 @@
         <div>
             <img class="superate_logo" src="{{asset('img/superate_logo.png')}}" alt="Supérate_Logo">
         </div>
-        @include('components.navbar')
+        @include('partials.navbar')
     </header>
     <main class="content">
         @yield('content')
