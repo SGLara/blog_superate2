@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('')->group(function () {
+    Route::redirect('/', 'inicio');
     Route::get('inicio', 'NavbarController@homeView')->name('inicio');
     Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
     Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
