@@ -1,6 +1,7 @@
 <div>
     <img class="superate_logo" src="{{asset('img/superate_logo.png')}}" alt="Supérate_Logo">
 </div>
+
 <nav class="navbar">
     <ul class="menu">
         <li><a class="{{ setActive('inicio') }}" href="{{route('inicio')}}">Inicio</a></li>
