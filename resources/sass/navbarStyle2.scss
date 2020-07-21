@@ -38,8 +38,8 @@
     text-decoration: none;
 }
 
-.menu li a:hover,
-.menu li:hover {
+.menu li a:hover/*,
+.menu li:hover*/ {
     color: white;
     background-color: #00b6d8;
     border-radius: 15px;
