@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 //This only works with the class {{ setActive() }}
@@ -12,18 +13,18 @@
 }
 
 .navbar {
-    width: 90%;
-    max-width: 1000px;
+    width: auto;
+    max-width: 1103px;
     margin-top: 30px;
-    margin-left: 500px;
-    background-color: #00c800;
+    margin-left: 400px;
     font-family: "Open Sans";
     border-radius: 15px;
+    background-color: #00c800;
 }
 
 .navbar ul {
-    list-style: none;
     overflow: hidden;
+    list-style: none;
 }
 
 .menu > li {
@@ -38,9 +39,7 @@
     text-decoration: none;
 }
 
-.menu li a:hover/*,
-.menu li:hover*/ {
-    color: white;
+.menu li a:hover{
     background-color: #00b6d8;
     border-radius: 15px;
     transition: all 0.3s;
@@ -80,3 +79,24 @@
     opacity: 1;
 }
 
+.btn-login>a{
+    color: #00c800 !important;
+    border: 2px solid #00c800;
+    font-style: oblique;
+    background-color: white;
+    border-radius: 60px;
+    font-size: 15px;
+    transition: all .5s;
+}
+
+.btn-login{
+    background: white;
+    border-radius: 60px;
+    background-color: #00c800;
+}
+
+.btn-login>a:hover{
+    border-radius: 15px !important;
+    background: white !important;
+    font-weight: bolder;
+}

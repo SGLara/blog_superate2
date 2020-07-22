@@ -7,6 +7,7 @@ Route::prefix('')->group(function () {
     Route::get('inicio', 'NavbarController@homeView')->name('inicio');
     Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
     Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
+    Route::view('login','login')->name('login');
 
     Route::group(['prefix' => 'quienes-somos'], function () {
         Route::get('nuestra-historia', 'NavbarController@ourHistoryView')->name('nuestra-historia');

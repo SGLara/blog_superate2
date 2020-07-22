@@ -9,8 +9,8 @@
         "title    title    title    title"
         "info     info     info     logos"
         "title2   title2   title2   title2"
-        "founder1 founder1 empty1 empty1"
-        "empty2 empty2 founder2 founder2";
+        "founder1 founder1 empty1   empty1"
+        "empty2   empty2   founder2 founder2";
 
     font-family: "Open Sans";
 }
@@ -63,7 +63,7 @@
     border-radius: 20px;
 }
 
-.who-we-are .founder1 img{
+.who-we-are .founder1 img {
     width: 200px;
     margin-right: 20px;
     float: left;
@@ -71,16 +71,16 @@
     border-radius: 10px;
 }
 
-.who-we-are .founder2{
+.who-we-are .founder2 {
     grid-area: founder2;
     padding: 20px;
     text-align: justify;
     border-color: #00b6d8;
-    border-style:  solid none none solid;
+    border-style: solid none none solid;
     border-radius: 20px;
 }
 
-.who-we-are .founder2 img{
+.who-we-are .founder2 img {
     width: 200px;
     margin-left: 20px;
     float: right;
@@ -88,12 +88,10 @@
     border-radius: 10px;
 }
 
-.who-we-are .founder2 h2{
+.who-we-are .founder2 h2 {
     text-align: right;
 }
 
-cite{
+cite {
     color: gray;
 }
-
-
