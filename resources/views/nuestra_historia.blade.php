@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 
+@section('style_section')
+<link rel="stylesheet" href="{{asset('css/nuestra_historia.css')}}">
+@endsection
 @section('title','Nuestra Historia')
 @section('content')
 <div class="who-we-are">
@@ -46,14 +49,14 @@
         </p>
     </div>
     <div class="logos">
-        <div class="img1"><img src="{{ asset('img/logo-fsp.jpg')}}" alt="logo-fsp.jpg"></div>
-        <div class="img2"><img src="{{ asset('img/logo-h.jpg')}}" alt="logo-h.jpg"></div>
+        <div class="img1"><img src="{{ asset('img/who-we-are/our-history/logo-fsp.jpg')}}" alt="logo-fsp.jpg"></div>
+        <div class="img2"><img src="{{ asset('img/who-we-are/our-history/logo-h.jpg')}}" alt="logo-h.jpg"></div>
     </div>
     <div class="founders">
         <h1>Conoce a Sus Fundadores</h1>
     </div>
     <div class="founder1">
-        <h2><img src="{{ asset('img/ricardo.jpg') }}" alt="founder1">Ricardo Sagrera Bogle</h2><br><br>
+        <h2><img src="{{ asset('img/who-we-are/our-history/ricardo.jpg') }}" alt="founder1">Ricardo Sagrera Bogle</h2><br><br>
         <p>Ricardo Sagrera ha formado parte de diferentes gremiales de la empresa privada y múltiples organizaciones sin
             fines de lucro enfocadas en las áreas de salud y educación. Gracias al interés que ha tenido desde hace
             muchos años en estas áreas, creó junto a su familia la Fundación Sagrera Palomo, la cual se enfocó, desde su
@@ -64,7 +67,7 @@
             -Ricardo Sagrera</cite>
     </div>
     <div class="founder2">
-        <h2><img src="{{ asset('img/arturo.jpg') }}" alt="founder2">Arturo X. Sagrera Palomo</h2><br><br>
+        <h2><img src="{{ asset('img/who-we-are/our-history/arturo.jpg') }}" alt="founder2">Arturo X. Sagrera Palomo</h2><br><br>
         <p>Arturo X. Sagrera, un empresario con notable compromiso social ha liderado diferentes proyectos orientados a
             promover sana convivencia y brindar oportunidades de superación a niños y niñas, jóvenes y familias en
             comunidades vulnerables de El Salvador. Actualmente, Arturo es el director general del Programa ¡Supérate!
