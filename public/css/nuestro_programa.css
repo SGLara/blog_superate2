@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+.what-we-do {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto 40px auto;
+  grid-template-areas: "title1   title1   title2 title2" "content1 content1 img1   img1" "img2     img2     title3   title3" "img2     img2     content2   content2";
+  font-family: "Open Sans"; }
+
+.our-program {
+  grid-area: title1;
+  color: #00b6d8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+.areas {
+  grid-area: title2;
+  color: #00b6d8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center; }
+
+.content1 {
+  grid-area: content1;
+  padding: 20px;
+  text-align: justify;
+  background-color: #00b6d8;
+  color: white;
+  border-radius: 5px 30px 5px 30px; }
+
+.areas-image {
+  grid-area: img1;
+  display: flex;
+  justify-content: center; }
+
+.boy-image {
+  grid-area: img2; }
+
+.requirements {
+  grid-area: title3;
+  color: #00b6d8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  text-align: center; }
+
+.content2 {
+  grid-area: content2;
+  padding: 30px;
+  list-style-position: inside;
+  background-color: #c9c6c6;
+  border-radius: 10px;
+  margin: 10px; }
+
+.content2 span {
+  color: gray;
+  font-style: oblique; }
+
+span > a {
+  padding: 5px;
+  background-color: #00b6d8;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 3px 0 #007488;
+  border: 5px solid #00b6d8;
+  margin: 5px; }
+
+span > a:hover {
+  border-top: 3px solid #00b6d8;
+  box-shadow: 0 2px 0 #007488; }
+
+/*# sourceMappingURL=nuestro_programa.css.map */
