@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+.focus-on-quality {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 20px;
+    grid-template-areas:
+    "title title"
+    "img img"
+    "content1 content1";
+    font-family: 'Open Sans';
+}
+
+.title {
+    grid-area: title;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #00b6d8;
+}
+
+.img {
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+}
+
+.img > img{
+    border: 10px dotted #00c800;
+}
+.content {
+    grid-area: content1;
+    background-color: #00b6d8;
+    color: white;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px 20px 5px 20px;
+}
