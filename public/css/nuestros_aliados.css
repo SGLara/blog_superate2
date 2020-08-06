@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none; }
+
 .our-allies {
   display: grid;
   grid-gap: 10px 20px;
@@ -53,19 +59,27 @@
   text-align: justify;
   padding: 30px; }
 
-.see1 {
+.see1 > a {
   grid-area: see1;
   padding: 0 0 25px 25px;
-  color: #00b6d8; }
+  color: #00b6d8;
+  text-decoration: none; }
 
-.see2 {
+.see2 > a {
   grid-area: see2;
   padding: 0 0 25px 25px;
-  color: #00b6d8; }
+  color: #00b6d8;
+  text-decoration: none; }
 
-.see3 {
+.see3 > a {
   grid-area: see3;
   padding: 0 0 25px 25px;
-  color: #00b6d8; }
+  color: #00b6d8;
+  text-decoration: none; }
+
+.see1,
+.see2,
+.see3 {
+  margin-bottom: 30px; }
 
 /*# sourceMappingURL=nuestros_aliados.css.map */

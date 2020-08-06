@@ -27,4 +27,5 @@
 <footer>
     <h5>Copyright &copy; {{ date('Y')}} ¡Supérate!</h5>
 </footer>
+    @yield('scripts')
 </html>
