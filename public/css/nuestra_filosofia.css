@@ -5,7 +5,10 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   grid-template-areas: "slogan      slogan" "vision      free1" "free2   mission" "values values";
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  max-width: 1300px;
+  width: 90%;
+  margin: 130px auto; }
 
 .our-philosophy .slogan {
   grid-area: slogan;

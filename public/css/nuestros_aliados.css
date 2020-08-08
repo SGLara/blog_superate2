@@ -1,17 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none; }
-
 .our-allies {
   display: grid;
   grid-gap: 10px 20px;
   grid-template-columns: 2fr 0.8fr;
   grid-template-rows: repeat(8, auto);
   grid-template-areas: "title     title" "subtitle  subtitle" "content1  logos" "see1      logos" "content2  logos" "see2      logos" "content3  logos" "see3      logos";
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  max-width: 1300px;
+  width: 90%;
+  margin: 130px auto; }
 
 .logos {
   grid-area: logos;

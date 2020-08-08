@@ -15,6 +15,7 @@ body{
     width: 100%;
     background-color: white;
     border-bottom: 3px solid #00c800;
+    z-index: 1;
 }
 
 .superate_logo {
@@ -24,11 +25,8 @@ body{
 }
 
 main {
-    width: 90%;
-    padding: 20px;
-    max-width: 1300px;
-    margin: 130px auto;
-    border-bottom: 3px solid #00c800;
+    width: 100%;
+    max-width: 10000px;
 }
 
 footer{

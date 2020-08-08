@@ -5,7 +5,10 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(7, auto);
   grid-template-areas: "title1   title1   title1   title1   title1" "descrip  descrip  descrip  descrip  descrip" "img1     img2     img3     img4     img5" "img6     img7     img8     img9     img10" "title2   title2   title2   title2   title2" "descrip2 descrip2 descrip2 descrip2 descrip2" "img11    img12    img13    img14    img15";
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1300px;
+  width: 90%;
+  margin: 130px auto; }
 
 .our-team .title {
   grid-area: title1;

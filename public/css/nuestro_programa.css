@@ -5,7 +5,10 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto auto 40px auto;
   grid-template-areas: "title1   title1   title2 title2" "content1 content1 img1   img1" "img2     img2     title3   title3" "img2     img2     content2   content2";
-  font-family: "Open Sans"; }
+  font-family: "Open Sans";
+  max-width: 1300px;
+  width: 90%;
+  margin: 130px auto; }
 
 .our-program {
   grid-area: title1;
