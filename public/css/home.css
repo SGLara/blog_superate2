@@ -24,7 +24,8 @@ img {
   max-height: 600px;
   margin: 30px auto 0;
   z-index: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 8px solid #00b6d8; }
 
 /* Next & previous buttons */
 .prev,
@@ -38,7 +39,7 @@ img {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  transition: 0.6s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border-radius: 0 3px 3px 0;
   user-select: none; }
 
@@ -67,7 +68,7 @@ img {
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 15%; }
+  top: 17%; }
 
 /* The dots/bullets/indicators */
 .dot {
@@ -106,5 +107,9 @@ img {
   .next,
   .text {
     font-size: 11px; } }
+.logos {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 1px dotted gray; }
 
 /*# sourceMappingURL=home.css.map */

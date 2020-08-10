@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{asset('img/favicon/sup_favicon.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbarStyle2.css')}}">
     @yield('style_section')
@@ -25,7 +25,19 @@
     @include('partials.scripts')
 </body>
 <footer>
+    <div>
+        <a href="https://www.facebook.com/PESuperate" target="_blank"><img id="facebook" src="img/index/social_icons/facebook.svg"
+                alt="facebook_logo" loading="lazy" onmouseover="setHoverFacebook()" onmouseout="setOriginalFacebook()"></a>
+        <a href="https://twitter.com/PESuperate" target="_blank"><img id="twitter" src="img/index/social_icons/twitter.svg"
+                alt="twitter_logo" loading="lazy" onmouseover="setHoverTwitter()" onmouseout="setOriginalTwitter()"></a>
+        <a href="https://www.instagram.com/pesuperate/" target="_blank"><img id="instagram" src="img/index/social_icons/instagram.svg"
+                alt="instagram_logo" loading="lazy" onmouseover="setHoverInstagram()" onmouseout="setOriginalInstagram()"></a>
+        <a href="https://www.youtube.com/user/ProgramaSuperate" target="_blank"><img id="youtube"
+                src="img/index/social_icons/youtube.svg" alt="youtube_logo" loading="lazy" onmouseover="setHoverYoutube()" onmouseout="setOriginalYoutube()"></a>
+    </div>
     <h5>Copyright &copy; {{ date('Y')}} ¡Supérate!</h5>
 </footer>
-    @yield('scripts')
+@yield('scripts')
+<script src="{{ asset('js/hover_icons.js') }}"></script>
+
 </html>
