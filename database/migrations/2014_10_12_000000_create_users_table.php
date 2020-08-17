@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email',25)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigIncrements('superate_center_id');
+            $table->unsignedBigInteger('superate_center_id');
             $table->date('birthdate');
             $table->char('phone',8);
             $table->enum('gender',['m','f']);

@@ -15,6 +15,7 @@ class CreateMagazinesTable extends Migration
     {
         Schema::create('magazines', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 25);
             $table->timestamps();
         });
     }

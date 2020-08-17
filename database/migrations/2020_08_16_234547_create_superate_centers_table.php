@@ -15,6 +15,8 @@ class CreateSuperateCentersTable extends Migration
     {
         Schema::create('superate_centers', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 100);
+            $table->year('year');
             $table->timestamps();
         });
     }

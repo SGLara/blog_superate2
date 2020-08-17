@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBlogsTable extends Migration
+class AddFkToBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->string('title',50);
-            $table->text('content');
-            $table->unsignedBigInteger('created_by_id');
-            $table->timestamps();
+        Schema::table('blogs', function (Blueprint $table) {
+            $table->foreign('created_by_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::table('blogs', function (Blueprint $table) {
+            $table->dropForeign(['created_by_id']);
+        });
     }
 }
