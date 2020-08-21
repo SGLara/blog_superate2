@@ -6,64 +6,84 @@ use Illuminate\Http\Request;
 
 class NavbarController extends Controller
 {
-    function homeView(){
+    function homeView()
+    {
         return view('home');
     }
-    function ourAlliesView(){
+    function ourAlliesView()
+    {
         return view('nuestros_aliados');
     }
-    function contactUsView(){
+    function contactUsView()
+    {
         return view('contactanos');
     }
-    function ourHistoryView(){
+    function ourHistoryView()
+    {
         return view('nuestra_historia');
     }
-    function ourPhilosophyView(){
+    function ourPhilosophyView()
+    {
         return view('nuestra_filosofia');
     }
-    function multiplyEffectView(){
+    function multiplyEffectView()
+    {
         return view('efecto_multiplicador');
     }
-    function ourTeamView(){
+    function ourTeamView()
+    {
         return view('nuestro_equipo');
     }
-    function ourProgramView(){
+    function ourProgramView()
+    {
         return view('nuestro_programa');
     }
-    function qualityFocusView(){
+    function qualityFocusView()
+    {
         return view('enfoque_en_la_calidad');
     }
-    function impactView(){
+    function impactView()
+    {
         return view('impacto');
     }
-    function hilasalView(){
+    function hilasalView()
+    {
         return view('cs_hilasal');
     }
-    function adocView(){
+    function adocView()
+    {
         return view('cs_adoc');
     }
-    function sanMiguelitoView(){
+    function sanMiguelitoView()
+    {
         return view('cs_fam_sanmiguelito');
     }
-    function pomaView(){
+    function pomaView()
+    {
         return view('cs_fpoma');
     }
-    function merletView(){
+    function merletView()
+    {
         return view('cs_merlet');
     }
-    function jupaView(){
+    function jupaView()
+    {
         return view('cs_jupa');
     }
-    function raicesView(){
+    function raicesView()
+    {
         return view('cs_raices');
     }
-    function grupoQView(){
+    function grupoQView()
+    {
         return view('cs_grupoq');
     }
-    function ciudadDelNinoView(){
+    function ciudadDelNinoView()
+    {
         return view('cs_fam_cdn');
     }
-    function proviviendaView(){
+    function proviviendaView()
+    {
         return view('cs_fpro');
     }
 }
