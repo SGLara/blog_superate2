@@ -1,13 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\{Route,Auth};
 
-Route::prefix('')->group(function () {
     Route::redirect('/', 'inicio');
     Route::get('inicio', 'NavbarController@homeView')->name('inicio');
     Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
     Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
-    Route::view('login','login')->name('login');
 
     Route::group(['prefix' => 'quienes-somos'], function () {
         Route::get('nuestra-historia', 'NavbarController@ourHistoryView')->name('nuestra-historia');
@@ -34,4 +32,5 @@ Route::prefix('')->group(function () {
         Route::get('cs-fam-cdn', 'NavbarController@ciudadDelNinoView')->name('cs-fam-cdn');
         Route::get('cs-provivienda', 'NavbarController@proviviendaView')->name('cs-provivienda');
     });
-});
+
+Auth::routes();

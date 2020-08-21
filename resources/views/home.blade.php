@@ -17,9 +17,7 @@
         <div class="numbertext">1 / 11</div>
         <img src="{{ asset('img/index/slideshow/img1.jpg') }}" style="width:100%">
         <div class="text">
-            <h4>En el 2019 ¡Supérate! celebra su décimo quinto aniversario llegando a 10 Centros, 6 en El Salvador y 4
-                en
-                Panamá.</h4>
+            <h4>En el 2019 ¡Supérate! celebra su décimo quinto aniversario llegando a 10 Centros, 6 en El Salvador y 4 en Panamá.</h4>
         </div>
     </div>
 
@@ -28,14 +26,11 @@
         <img src="{{ asset('img/index/slideshow/img2.jpg') }}" style="width:100%">
         <div class="text">
             <h4>¡Supérate!, nace como sueño visionario de un empresario salvadoreño, tomando vida en el 2004 con un
-                centro y
-                40 jóvenes en el Valle de San Andrés. Tres años después, desarrollamos una franquicia social que hasta
-                la
-                fecha ha beneficiado a 3,810 jóvenes de 10 centros en la región.<br><br>
+                centro y 40 jóvenes en el Valle de San Andrés. Tres años después, desarrollamos una franquicia social que hasta
+                la fecha ha beneficiado a 3,810 jóvenes de 10 centros en la región.<br><br>
 
                 Ricardo Sagrera</h4>
-            <span>Fundador y Presidente del Programa ¡Supérate! en la celebración del Décimo Aniversario del
-                Programa.</span>
+            <span>Fundador y Presidente del Programa ¡Supérate! en la celebración del Décimo Aniversario del Programa.</span>
         </div>
     </div>
 
@@ -55,8 +50,7 @@
         <div class="text">
             <h4>"Cada uno de los momentos en ¡Supérate! estuvieron cargados de esfuerzos, sacrificios, perseverancia,
                 responsabilidades, compromiso, entrega y especialmente el sueño de transformar nuestras vidas a través
-                de la
-                educación"</h4><br>
+                de la educación"</h4><br>
 
             <span>Misael Bernave Díaz</span>
         </div>
@@ -70,8 +64,7 @@
 
             <h4>Desarrollar jóvenes con potencial y deseos de superación personal, para que, a través de una formación
                 integral puedan optar a mejores oportunidades de formación profesional y de trabajo, para mejorar su
-                calidad
-                de vida y entorno.</h4>
+                calidad de vida y entorno.</h4>
         </div>
     </div>
 
@@ -82,8 +75,7 @@
             <h2>CULTURA EMPRESARIAL</h2><br>
 
             <h4>La transformación de los jóvenes inicia desde el primer día en el Programa, la calidad del personal de
-                los
-                Centros ¡Supérate!, el programa educativo, la infraestructura de los Centros, la ambientación y el
+                los Centros ¡Supérate!, el programa educativo, la infraestructura de los Centros, la ambientación y el
                 mobiliario, cada componente del Programa, estimula el cambio a nivel personal en cada estudiante.</h4>
         </div>
     </div>
@@ -106,8 +98,7 @@
         <div class="text">
             <h2>VISIÓN</h2><br>
             <h4>Ser un programa de excelencia académica que contribuya a elevar el nivel educativo de la juventud de
-                escasos
-                recursos económicos de Centroamérica con el fin de brindarles nuevas y mejores oportunidades de vida a
+                escasos recursos económicos de Centroamérica con el fin de brindarles nuevas y mejores oportunidades de vida a
                 través de la capacitación de alta calidad en inglés, computación y valores.</h4>
         </div>
     </div>
@@ -147,7 +138,7 @@
     <span class="dot" onclick="currentSlide(10)"></span>
     <span class="dot" onclick="currentSlide(11)"></span>
 </div>
-</div>
+
 
 <div class="logos">
     <a target="_blank" href="https://www.hilasal.com.sv">

@@ -1,6 +1,6 @@
 var slideIndex = 1;
 showSlides(slideIndex);
-setInterval(autoChangeSlide, 10000) //change it every 10 seconds
+setInterval(autoChangeSlide, 6000) //it changes every 6 seconds
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
