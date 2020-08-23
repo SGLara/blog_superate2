@@ -2,11 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\{Model,SoftDeletes};
+use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
 class SuperateCenter extends Model
 {
-    use SoftDeletes;
-    protected $guarded = ['id','name'];
+    // use SoftDeletes;
+    protected $guarded = ['id', 'name'];
 
+    
 }

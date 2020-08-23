@@ -21,6 +21,16 @@ class User extends Authenticatable
         'id', 'phone', 'email', 'password'
     ];
 
+    public function superateCenter()
+    {
+        return $this->belongsTo(SuperateCenter::class);
+    }
+
+    public function blogs()
+    {
+        return $this->hasMany(Blog::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

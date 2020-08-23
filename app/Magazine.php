@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\{Model,SoftDeletes};
+use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
 class Magazine extends Model
 {
-    use SoftDeletes;
-    protected $guarded = ['id','title'];
+    // use SoftDeletes;
+    protected $guarded = ['id', 'title'];
 }
