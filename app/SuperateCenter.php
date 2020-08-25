@@ -9,5 +9,7 @@ class SuperateCenter extends Model
     // use SoftDeletes;
     protected $guarded = ['id', 'name'];
 
-    
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }
