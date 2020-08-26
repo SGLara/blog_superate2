@@ -2,14 +2,14 @@
 
 @section('content')
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('img/superate(1).jpg')">
+<header class="masthead" style="background-image: url('/img/superate(1).jpg')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h1 style="text-shadow: 3px 3px 2px black">Bienvenido a ¡Supérate! | BLOG</h1>
-          <span class="subheading" style="text-shadow: 3px 3px 2px black">Un gran lugar para dejar fluir tus
+          <h1 style="text-shadow: 2px 2px 6px black">Bienvenido a ¡Supérate! <span style="color: #00b6d8;">|</span> BLOG</h1>
+          <span class="subheading" style="text-shadow: 2px 2px 6px black; font-weight: bold;">Un gran lugar para dejar fluir tus
             ideas</span>
         </div>
       </div>
