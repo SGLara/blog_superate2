@@ -36,6 +36,6 @@
         </li>
         <li><a class="{{ setActive('nuestros-aliados') }}" href="{{route('nuestros-aliados')}}">Nuestros Aliados</a></li>
         <li><a class="{{ setActive('contactanos') }}" href="{{route('contactanos')}}">Contáctanos</a></li>
-        <li class="btn-login"><a href="{{ route('login') }}">Iniciar Sesión</a></li>
+        <li class="btn-login"><a href="{{ route('blog') }}">BLOG</a></li>
     </ul>
 </nav>

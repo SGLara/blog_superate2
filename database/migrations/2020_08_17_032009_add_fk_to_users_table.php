@@ -15,9 +15,9 @@ class AddFkToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->foreign('superate_center_id')->references('id')->on('superate_centers')->onDelete('cascade');
+            $table->index('superate_center_id');
             $table->index('first_name');
             $table->index('last_name');
-            $table->index('superate_center_id');
             $table->index('phone');
         });
     }
@@ -31,9 +31,9 @@ class AddFkToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['superate_center_id']);
+            $table->dropIndex(['superate_center_id']);
             $table->dropIndex(['first_name']);
             $table->dropIndex(['last_name']);
-            $table->dropIndex(['superate_center_id']);
             $table->dropIndex(['phone']);
         });
     }
