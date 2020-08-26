@@ -8,7 +8,7 @@ class NavbarController extends Controller
 {
     function homeView()
     {
-        return view('home');
+        return view('inicio');
     }
     function ourAlliesView()
     {
