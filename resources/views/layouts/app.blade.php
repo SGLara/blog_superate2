@@ -82,7 +82,7 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
+                document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
               </a>
 
@@ -137,11 +137,11 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src={{ asset('resources/blog-template0/vendor/jquery/jquery.min.js') }}></script>
-  <script src={{ asset('resources/blog-template0/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
+  <script src={{ asset('resources/THEMES/blog-template0/vendor/jquery/jquery.min.js') }}></script>
+  <script src={{ asset('resources/THEMES/blog-template0/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
 
   <!-- Custom scripts for this template -->
-  <script src={{ asset('resources/blog-template0/js/clean-blog.min.js') }}></script>
+  <script src={{ asset('resources/THEMES/blog-template0/js/clean-blog.min.js') }}></script>
 
 </body>
 

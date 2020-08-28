@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('/img/superate(1).jpg')">
+<header class="masthead" style="background-image: url('/img/superate(1).jpg'); background-attachment: fixed;">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">

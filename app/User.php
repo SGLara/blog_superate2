@@ -17,8 +17,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $guarded = [
-        'id', 'phone', 'email', 'password'
+    protected $fillable = [
+        'first_name', 'last_name', 'email', 'password', 'birthdate', 'phone', 'gender'
     ];
 
     public function superateCenter()

@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('email', 30)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('superate_center_id');
-            $table->date('birthdate');
-            $table->char('phone', 15);
-            $table->enum('gender', ['m', 'f']);
+            $table->unsignedBigInteger('superate_center_id')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->char('phone', 15)->nullable();
+            $table->enum('gender', ['m', 'f'])->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
