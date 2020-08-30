@@ -11,5 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/admin/sb-admin.js', 'public/js/admin')
+    .js('resources/js/admin/demo/chart-area-demo.js', 'public/js/admin/demo')
+    .js('resources/js/admin/demo/chart-bar-demo.js', 'public/js/admin/demo')
+    .js('resources/js/admin/demo/chart-pie-demo.js', 'public/js/admin/demo')
+    .js('resources/js/admin/demo/datatables-demo.js', 'public/js/admin/demo');
