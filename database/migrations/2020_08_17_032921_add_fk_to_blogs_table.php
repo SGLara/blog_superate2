@@ -14,9 +14,8 @@ class AddFkToBlogsTable extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
-            $table->index('created_by');
-            $table->index('title');
+            $table->foreign('created_by')->references('id')->on('users');
+            
         });
     }
 
@@ -29,8 +28,6 @@ class AddFkToBlogsTable extends Migration
     {
         Schema::table('blogs', function (Blueprint $table) {
             $table->dropForeign(['created_by']);
-            $table->dropIndex(['created_by']);
-            $table->dropIndex(['title']);
         });
     }
 }
