@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->truncateTables([
+            'superate_centers',
+            'users',      //remember to delete this sentence later, to avoid lost of data
+            'blogs'
+        ]);
+
         // $this->call(UserSeeder::class);
+        $this->call(SuperateCenterSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(BlogSeeder::class);
+    }
+
+    protected function truncateTables(array $tables)
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
+
+        foreach ($tables as $table) {
+            DB::table($table)->truncate();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
     }
 }

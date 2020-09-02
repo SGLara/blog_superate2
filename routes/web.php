@@ -39,8 +39,9 @@ Route::group(['prefix' => 'blog'], function () {
     Route::view('contacto', 'blog-template.contact')->name('contacto');
     Route::view('ejemplo', 'blog-template.post')->name('ejemplo');
     Route::get('admin', 'AdminController@index')->name('admin');
+    Route::resource('blogs','BlogController');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); //THIS IS THE HOME DEFAULT VIEW
