@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 30)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('is_admin')->default(0);
             $table->unsignedBigInteger('superate_center_id')->nullable()->index();
             $table->date('birthdate')->nullable();
             $table->char('phone', 15)->nullable()->index();

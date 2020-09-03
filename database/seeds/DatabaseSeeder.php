@@ -14,13 +14,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->truncateTables([
             'superate_centers',
-            'users',      //remember to delete this sentence later, to avoid lost of data
             'blogs'
         ]);
 
         // $this->call(UserSeeder::class);
         $this->call(SuperateCenterSeeder::class);
-        $this->call(UserSeeder::class);
         $this->call(BlogSeeder::class);
     }
 
