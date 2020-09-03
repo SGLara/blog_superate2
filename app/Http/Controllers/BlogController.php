@@ -26,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.blogs.create');
     }
 
     /**
@@ -37,7 +37,11 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:191',
+            'image' => 'required|image',
+            'blog_content' => 'required',
+        ]);
     }
 
     /**

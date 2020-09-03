@@ -21,6 +21,9 @@
     <!-- Custom styles for this template-->
     <link href={{ asset('css/admin/sb-admin.css') }} rel="stylesheet">
 
+    {{-- CKEditor 4 plugin --}}
+    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
 </head>
 
 <body id="page-top">

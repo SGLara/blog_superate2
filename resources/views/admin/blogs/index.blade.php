@@ -2,34 +2,44 @@
 
 @section('content')
 
-<h1>This Is Post Index View</h1><br>
+<div class="row py-lg-2">
+    <div class="col-md-6">
+        <h1>Blogs Publicados</h1>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ route('blogs.create') }}" class="btn btn-primary btn-lg float-md-right" role="button"
+            aria-pressed="true">Crear Nuevo Blog</a>
+    </div>
+</div>
+
+
 
 <!-- DataTables Example -->
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Data Table Example</div>
+        Ejemplo Tabla de Datos</div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Image</th>
-                        <th>Created By</th>
-                        <th>Tools</th>
+                        <th>Titulo</th>
+                        <th>Contenido</th>
+                        <th>Imagen</th>
+                        <th>Creado por</th>
+                        <th>Herramientas</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>Title</th>
-                        <th>Content</th>
-                        <th>Image</th>
-                        <th>Created By</th>
-                        <th>Tools</th>
+                        <th>Titulo</th>
+                        <th>Contenido</th>
+                        <th>Imagen</th>
+                        <th>Creado por</th>
+                        <th>Herramientas</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -39,7 +49,7 @@
                         <td>{{ $blog->title }}</td>
                         <td>{{ $blog->content }}</td>
                         <td>{{ $blog->image_url }}</td>
-                        <td>{{ $blog->created_by }}</td>
+                        <td>{{ $blog->user->first_name." ".$blog->user->last_name }}</td>
                         <td>...</td>
                     </tr>
                     @endforeach
