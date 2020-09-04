@@ -42,6 +42,31 @@ class BlogController extends Controller
             'image' => 'required|image',
             'blog_content' => 'required',
         ]);
+        //get the image from the form
+        $fileNameWithTheExtension = $request->image->getClientOriginalName();
+
+        //get the file's name
+        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
+
+        //get the extension's file
+        $extension = $request->image->getClientOriginalExtension();
+
+        //new file name with timestamp
+        $newFileName = $fileName . '_' . time() . '.' . $extension;
+
+        //save the image in public/img folder
+        $path = $request->image->storeAs('public/img/blogs_images', $newFileName);
+
+        $user = auth()->user();
+
+        $blog = Blog::create([
+            'title' => $request->title,
+            'image_url' => $request->image,
+            'content' => $request->blog_content,
+            'created_by' => $user->id,
+        ]);
+
+        return redirect('blog/blogs');
     }
 
     /**

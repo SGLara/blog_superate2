@@ -4,6 +4,16 @@
 
 <h1>Crear Nuevo Blog</h1><br>
 
+@if ($errors->any())
+    <div class="alert alert-danger" role="alert">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li> 
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <form method="POST" action="{{ route('blogs.store') }}" enctype="multipart/form-data">
     @csrf
 
@@ -14,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="image">Subir una imagen</label>
-        <input type="file" name="image" class="form-control-file" id="image" required>
+        <input type="file" name="image" class="form-control-file" id="image">
     </div>
     <div class="form-group">
         <label for="content">Contenido de mi blog</label>
@@ -22,7 +32,7 @@
     </div>
 
     <div class="form-group pt-2">
-        <input class="btn btn-primary" type="submit" value="Submit">
+        <input class="btn btn-primary" type="submit" value="Enviar">
     </div>
 </form>
 
