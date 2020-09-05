@@ -1,6 +1,6 @@
-    @extends('admin.layouts.dashboard')
+@extends('admin.layouts.dashboard')
 
-    @section('content')
+@section('content')
 
 <div class="row py-lg-2">
     <div class="col-md-6">
@@ -18,7 +18,7 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i>
-        Ejemplo Tabla de Datos</div>
+        Blogs Registrados en la BD</div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -48,9 +48,14 @@
                         <td>{{ $blog->id }}</td>
                         <td>{{ $blog->title }}</td>
                         <td>{{ $blog->content }}</td>
-                        <td>{{ $blog->image_url }}</td>
+                        <td>
+                            <center><img src="{{ asset('storage/img/blogs_images/' . $blog->image_url) }}"
+                                    alt="{{ $blog->image_url }}" width="150" loading="lazy"></center>
+                        </td>
                         <td>{{ $blog->user->first_name." ".$blog->user->last_name }}</td>
-                        <td>...</td>
+                        <td>
+                            <a href="{{ route('blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

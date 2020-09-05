@@ -20,7 +20,7 @@
     <div class="form-group">
         <label for="title">Título</label>
         <input type="text" name="title" class="form-control" id="title" placeholder="Titulo de mi blog..."
-            value="{{ old('title') }}" required>
+            value="{{ old('title') }}" required autocomplete="off">
     </div>
     <div class="form-group">
         <label for="image">Subir una imagen</label>

@@ -55,14 +55,14 @@ class BlogController extends Controller
         $newFileName = $fileName . '_' . time() . '.' . $extension;
 
         //save the image in public/img folder
-        $path = $request->image->storeAs('public/img/blogs_images', $newFileName);
+        $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
 
         $user = auth()->user();
 
         $blog = Blog::create([
             'title' => $request->title,
-            'image_url' => $request->image,
             'content' => $request->blog_content,
+            'image_url' => $newFileName,
             'created_by' => $user->id,
         ]);
 
@@ -86,9 +86,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Blog $blog)
     {
-        //
+        //get the post with the id $post
+        $blog = Blog::findOrFail($blog->id);
+        return view('admin.blogs.edit', ['blog' => $blog]);
     }
 
     /**
@@ -100,7 +102,34 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:191',
+            'image' => 'required|image',
+            'blog_content' => 'required',
+        ]);
+
+        //get the image from the form
+        $fileNameWithTheExtension = $request->image->getClientOriginalName();
+
+        //get the file's name
+        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
+
+        //get the extension's file
+        $extension = $request->image->getClientOriginalExtension();
+
+        //new file name with timestamp
+        $newFileName = $fileName . '_' . time() . '.' . $extension;
+
+        //save the image in public/img folder
+        $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
+
+        $blog = Blog::findOrFail($id);
+        $blog->title = $request->title;
+        $blog->content = $request->blog_content;
+        $blog->image_url = $newFileName;
+        $blog->save();
+
+        return redirect('blog/blogs');
     }
 
     /**
