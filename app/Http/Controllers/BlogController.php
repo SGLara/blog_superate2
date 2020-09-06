@@ -66,7 +66,7 @@ class BlogController extends Controller
             'created_by' => $user->id,
         ]);
 
-        return redirect('blog/blogs');
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -129,7 +129,7 @@ class BlogController extends Controller
         $blog->image_url = $newFileName;
         $blog->save();
 
-        return redirect('blog/blogs');
+        return redirect()->route('blogs.index');
     }
 
     /**
@@ -140,6 +140,15 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $blog = Blog::findOrFail($id);
+
+        $oldImage = public_path() . '/storage/img/blogs_images/' . $blog->image_url;
+
+        if (file_exists($oldImage)) {
+            unlink($oldImage);
+        }
+        $blog->delete();
+
+        return redirect()->route('blogs.index');
     }
 }

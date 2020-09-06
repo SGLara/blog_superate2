@@ -30,7 +30,7 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1" href="index.html">¡Hola,
+        <a class="navbar-brand mr-1 font-weight-bold" href="#">¡Hola,
             {{ Auth::user()->first_name." ".Auth::user()->last_name }}!</a>
         &nbsp
         &nbsp
@@ -186,7 +186,7 @@
     <!-- Demo scripts for this page-->
     <script src={{ asset('js/admin/demo/datatables-demo.js') }}></script>
     <script src={{ asset('js/admin/demo/chart-area-demo.js') }}></script>
-
+    @yield('js_blog_page')
 </body>
 
 </html>
