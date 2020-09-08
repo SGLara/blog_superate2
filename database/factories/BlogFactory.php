@@ -9,7 +9,7 @@ $factory->define(Blog::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence(4),
         'content' => $faker->text(200),
-        'image_url'=> 'path/to/image.jpg',
-        'created_by' => 1
+        'image_url'=> '164610_1599599611.jpg',
+        'created_by' => $faker->numberBetween(1,2),
     ];
 });

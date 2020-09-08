@@ -18,7 +18,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'birthdate', 'phone', 'gender', 'is_admin'
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'birthdate',
+        'phone',
+        'gender',
+        'is_admin',
     ];
 
     public function superateCenter()
