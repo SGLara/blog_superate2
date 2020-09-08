@@ -44,22 +44,41 @@
                 </tfoot>
                 <tbody>
                     @if (count($blogs) == 0)
-                    <H1>¡Ooops! No hay blogs por el momento, porfavor vuelva pronto.</H1>
+                    <tr>
+                        <td colspan="6">
+                            <center>
+                                <H6 class="text-success font-weight-bold">¡Ooops! No hay blogs por el momento, porfavor
+                                    vuelva pronto...</H6>
+                            </center>
+                        </td>
+                    </tr>
                     @else
                     @foreach ($blogs as $blog)
                     <tr>
-                        <td>{{ $blog->id }}</td>
-                        <td>{{ $blog->title }}</td>
-                        <td>{{ $blog->content }}</td>
                         <td>
-                            <center><img src="{{ asset('storage/img/blogs_images/' . $blog->image_url) }}"
+                            <center>{{ $blog->id }}</center>
+                        </td>
+                        <td>
+                            <center>{{ $blog->title }}</center>
+                        </td>
+                        <td>
+                            <center>{{ $blog->content }}</center>
+                        </td>
+                        <td>
+                            <center>
+                                <img src="{{ asset('storage/img/blogs_images/' . $blog->image_url) }}"
                                     alt="{{ $blog->image_url }}" width="150" loading="lazy"></center>
                         </td>
-                        <td>{{ $blog->user->first_name." ".$blog->user->last_name }}</td>
                         <td>
-                            <a href="{{ route('blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
-                            <a href="#" data-toggle="modal" data-target="#deleteModal" data-blogid="{{ $blog->id }}"><i
-                                    class="fa fa-trash-alt"></i></a>
+                            <center>{{ $blog->user->first_name." ".$blog->user->last_name }}</center>
+                        </td>
+                        <td>
+                            <center>
+                                <a href="{{ route('blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
+                                <a href="#" data-toggle="modal" data-target="#deleteModal"
+                                    data-blogid="{{ $blog->id }}">
+                                    <i class="fa fa-trash-alt"></i></a>
+                            </center>
                         </td>
                     </tr>
                     @endforeach
@@ -71,6 +90,9 @@
     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 </div>
 
+@if (count($blogs) == 0)
+
+@else
 <!-- delete Modal-->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -96,6 +118,7 @@
         </div>
     </div>
 </div>
+@endif
 
 @endsection
 

@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\{Route, Auth};
 
 Route::redirect('/', 'inicio');
 Route::get('inicio', 'NavbarController@homeView')->name('inicio');
 Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
 Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
-Route::view('blog', 'blog-template.index')->name('blog');
+Route::get('blog', [HomeController::class, 'index'])->name('blog');
 
 Route::group(['prefix' => 'quienes-somos'], function () {
     Route::get('nuestra-historia', 'NavbarController@ourHistoryView')->name('nuestra-historia');
@@ -44,4 +45,4 @@ Route::group(['prefix' => 'blog'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home'); //THIS IS THE HOME DEFAULT VIEW
+// Route::get('/home', 'HomeController@index')->name('home'); //THIS IS THE HOME DEFAULT VIEW
