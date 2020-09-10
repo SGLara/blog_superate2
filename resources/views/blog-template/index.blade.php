@@ -47,9 +47,11 @@
       <hr>
 
       @endforeach
+
       <!-- Pager -->
-      <div class="clearfix">
-        <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+      <div class="clearfix mt-5">
+        {{ $blogs->links() }}
+        {{-- <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a> --}}
       </div>
     </div>
   </div>

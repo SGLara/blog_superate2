@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('id', 'desc')->paginate(10);
         return view('blog-template.index', compact('blogs'));
     }
 
