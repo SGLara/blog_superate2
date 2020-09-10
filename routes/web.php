@@ -7,7 +7,7 @@ Route::redirect('/', 'inicio');
 Route::get('inicio', 'NavbarController@homeView')->name('inicio');
 Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
 Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
-Route::get('blog', [HomeController::class, 'index'])->name('blog');
+Route::get('blog', [HomeController::class, 'index'])->name('blog'); //TUPLE SINTAX
 
 Route::group(['prefix' => 'quienes-somos'], function () {
     Route::get('nuestra-historia', 'NavbarController@ourHistoryView')->name('nuestra-historia');
@@ -41,6 +41,8 @@ Route::group(['prefix' => 'blog'], function () {
     Route::view('ejemplo', 'blog-template.post')->name('ejemplo');
     Route::get('admin', 'AdminController@index')->name('admin');
     Route::resource('blogs','BlogController');
+    Route::get('show/{id}', 'HomeController@show')->name('show');
+
 });
 
 Auth::routes();

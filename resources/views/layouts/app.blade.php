@@ -40,9 +40,9 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"
-    style="position: fixed; background-color:rgb(73, 73, 73);">
+    style="position: fixed; background-color:rgb(73, 73, 73); border-bottom: 8px solid #00c800;">
     <div class="container">
-      <a class="navbar-brand" href={{ route('blog') }}>¡Supérate! BLOG</a>
+      <a class="navbar-brand rounded" style="background-color: #00c800;"href={{ route('blog') }}>¡Supérate! BLOG</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -66,11 +66,11 @@
           <!-- Authentication Links -->
           @guest
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="nav-link mr-2 ml-5 rounded" style="background-color: #00b6d8;" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
           </li>
           @if (Route::has('register'))
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+            <a class="nav-link rounded" style="background-color: #00c800;" href="{{ route('register') }}">{{ __('Registrar') }}</a>
           </li>
           @endif
           @else
@@ -83,9 +83,10 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
+                {{ __('Cerrar Sesión') }}
               </a>
 
+              <a href="{{ route('admin') }}" class="dropdown-item">Dashboard</a>
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
               </form>

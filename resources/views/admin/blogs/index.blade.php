@@ -62,7 +62,7 @@
                             <center>{{ $blog->title }}</center>
                         </td>
                         <td>
-                            <center>{{ $blog->content }}</center>
+                            <center>{!! getShorterString($blog->content, 100) !!}</center>
                         </td>
                         <td>
                             <center>

@@ -86,10 +86,10 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit($id)
     {
         //get the post with the id $post
-        $blog = Blog::findOrFail($blog->id);
+        $blog = Blog::findOrFail($id);
         return view('admin.blogs.edit', ['blog' => $blog]);
     }
 

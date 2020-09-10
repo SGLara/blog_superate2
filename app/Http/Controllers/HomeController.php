@@ -17,4 +17,15 @@ class HomeController extends Controller
         $blogs = Blog::all();
         return view('blog-template.index', compact('blogs'));
     }
+
+
+    /**
+     * Show the blog by the id provided
+     */
+    public function show($id)
+    {
+        //find the blog with the related $id
+        $blog = Blog::findOrFail($id);
+        return view('blog-template.show', compact('blog'));
+    }
 }
