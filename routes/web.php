@@ -35,16 +35,16 @@ Route::group(['prefix' => 'nuestros-centros'], function () {
     Route::get('cs-provivienda', 'NavbarController@proviviendaView')->name('cs-provivienda');
 });
 
-Route::group(['prefix' => 'blog'], function () {
+Route::prefix('blog')->name('blog.')->group(function () {
     Route::view('acerca_de', 'blog-template.about')->name('acerca');
     Route::view('contacto', 'blog-template.contact')->name('contacto');
     Route::view('ejemplo', 'blog-template.post')->name('ejemplo');
-    Route::get('admin', 'AdminController@index')->name('admin');
-    Route::resource('blogs','BlogController');
     Route::get('show/{id}', 'HomeController@show')->name('show');
+    Route::resource('blogs', 'BlogController');
 
+    Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('dashboard', 'Admin\AdminController@index')->name('dashboard');
+    });
 });
 
 Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home'); //THIS IS THE HOME DEFAULT VIEW

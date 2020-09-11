@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Crear Nuevo Blog</h1><br>
+<h1 class="font-weight-bold">Editar Blog</h1><br>
 
 @if ($errors->any())
 <div class="alert alert-danger" role="alert">
@@ -14,7 +14,7 @@
 </div>
 @endif
 
-<form method="POST" action="{{ route('blogs.update', $blog->id) }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('blog.blogs.update', $blog->id) }}" enctype="multipart/form-data">
     @method('PUT')
     @csrf
 
@@ -42,8 +42,10 @@
     </textarea>
     </div>
 
-    <div class="form-group pt-2">
+    <div class="col-md-6">
         <input class="btn btn-primary" type="submit" value="Enviar">
+        <a href="{{ route('blog.blogs.index') }}" class="btn btn-secondary"
+        role="button" aria-pressed="true">Cancelar</a>
     </div>
 </form>
 

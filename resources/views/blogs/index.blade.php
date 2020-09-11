@@ -7,7 +7,7 @@
         <h1 class="font-weight-bold">Blogs Publicados</h1>
     </div>
     <div class="col-md-6">
-        <a href="{{ route('blogs.create') }}" class="btn btn-primary btn-lg float-md-right font-weight-bold"
+        <a href="{{ route('blog.blogs.create') }}" class="btn btn-primary btn-lg float-md-right font-weight-bold"
             role="button" aria-pressed="true">Crear Nuevo Blog</a>
     </div>
 </div>
@@ -74,7 +74,7 @@
                         </td>
                         <td>
                             <center>
-                                <a href="{{ route('blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('blog.blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
                                 <a href="#" data-toggle="modal" data-target="#deleteModal"
                                     data-blogid="{{ $blog->id }}">
                                     <i class="fa fa-trash-alt"></i></a>
@@ -107,7 +107,7 @@
             <div class="modal-body">Seleccion "borrar" si realmente quieres borrarlo</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <form method="POST" action="{{ route('blogs.destroy', $blog->id) }}">
+                <form method="POST" action="{{ route('blog.blogs.destroy', $blog->id) }}">
                     @method('DELETE')
                     @csrf
                     <input type="hidden" id="blog_id" name="blog_id" value="">

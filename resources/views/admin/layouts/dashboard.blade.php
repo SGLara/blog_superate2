@@ -76,7 +76,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link" href="{{ route('blogs.index') }}">
+                <a class="nav-link" href="{{ route('blog.blogs.index') }}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Blogs</span>
                 </a>

@@ -7,6 +7,11 @@ use App\Blog;
 
 class BlogController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,7 @@ class BlogController extends Controller
     {
         $blogs = Blog::all();
 
-        return view('admin.blogs.index', compact(['blogs']));
+        return view('blogs.index', compact(['blogs']));
     }
 
     /**
@@ -26,7 +31,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blogs.create');
+        return view('blogs.create');
     }
 
     /**
@@ -66,7 +71,7 @@ class BlogController extends Controller
             'created_by' => $user->id,
         ]);
 
-        return redirect()->route('blogs.index');
+        return redirect()->route('blog.blogs.index');
     }
 
     /**
@@ -90,7 +95,7 @@ class BlogController extends Controller
     {
         //get the post with the id $post
         $blog = Blog::findOrFail($id);
-        return view('admin.blogs.edit', ['blog' => $blog]);
+        return view('blogs.edit', ['blog' => $blog]);
     }
 
     /**
@@ -129,7 +134,7 @@ class BlogController extends Controller
         $blog->image_url = $newFileName;
         $blog->save();
 
-        return redirect()->route('blogs.index');
+        return redirect()->route('blog.blogs.index');
     }
 
     /**
@@ -149,6 +154,6 @@ class BlogController extends Controller
         }
         $blog->delete();
 
-        return redirect()->route('blogs.index');
+        return redirect()->route('blog.blogs.index');
     }
 }

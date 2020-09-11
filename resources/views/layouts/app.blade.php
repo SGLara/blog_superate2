@@ -42,7 +42,7 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav"
     style="position: fixed; background-color:rgb(73, 73, 73); border-bottom: 8px solid #00c800;">
     <div class="container">
-      <a class="navbar-brand rounded" style="background-color: #00c800;"href={{ route('blog') }}>¡Supérate! BLOG</a>
+      <a class="navbar-brand rounded" style="background-color: #00c800;" href={{ route('blog') }}>¡Supérate! BLOG</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -55,22 +55,24 @@
             <a class="nav-link" href={{ route('inicio') }}>INICIO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={{ route('acerca') }}>ACERCA DEL BLOG</a>
+            <a class="nav-link" href={{ route('blog.acerca') }}>ACERCA DEL BLOG</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={{ route('ejemplo') }}>EJEMPLO</a>
+            <a class="nav-link" href={{ route('blog.ejemplo') }}>EJEMPLO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={{ route('contacto') }}>CONTACTO</a>
+            <a class="nav-link" href={{ route('blog.contacto') }}>CONTACTO</a>
           </li>
           <!-- Authentication Links -->
           @guest
           <li class="nav-item">
-            <a class="nav-link mr-2 ml-5 rounded" style="background-color: #00b6d8;" href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+            <a class="nav-link mr-2 ml-5 rounded" style="background-color: #00b6d8;"
+              href="{{ route('login') }}">{{ __('Ingresar') }}</a>
           </li>
           @if (Route::has('register'))
           <li class="nav-item">
-            <a class="nav-link rounded" style="background-color: #00c800;" href="{{ route('register') }}">{{ __('Registrar') }}</a>
+            <a class="nav-link rounded" style="background-color: #00c800;"
+              href="{{ route('register') }}">{{ __('Registrar') }}</a>
           </li>
           @endif
           @else
@@ -86,7 +88,10 @@
                 {{ __('Cerrar Sesión') }}
               </a>
 
-              <a href="{{ route('admin') }}" class="dropdown-item">Dashboard</a>
+              @if (Auth::user()->is_admin)
+              <a href="{{ route('blog.admin.dashboard') }}" class="dropdown-item">Dashboard</a>
+              @endif
+
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
               </form>

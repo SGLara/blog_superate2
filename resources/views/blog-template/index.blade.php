@@ -26,12 +26,12 @@
       @foreach ($blogs as $blog)
 
       <div class="col-md-4">
-        <img class="img-thumbnail mt-5" width="100%" src="{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}"
+        <img class="img-thumbnail mt-4" width="100%" src="{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}"
           alt="blog_image">
       </div>
       <div class="col-lg-8">
         <div class="post-preview">
-          <a href="{{ route('show', $blog->id) }}">
+          <a href="{{ route('blog.show', $blog->id) }}">
             <h2 class="post-title">
               {{ $blog->title }}
             </h2>
