@@ -20,7 +20,9 @@ class BlogController extends Controller
     public function index()
     {
         $blogs = Blog::all();
-        return view('blogs.index', compact(['blogs']));
+        $lastBlog = Blog::orderBy('created_at', 'desc')->first();
+
+        return view('blogs.index', compact(['blogs','lastBlog']));
     }
     
     /**
@@ -140,11 +142,11 @@ class BlogController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $blog = Blog::findOrFail($id);
 

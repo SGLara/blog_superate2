@@ -53,13 +53,12 @@
           </div>
           <hr>
 
+          
+          @endforeach
           <!-- Pager -->
           <div class="clearfix mt-5">
             {{ $blogs->links() }}
           </div>
-
-        @endforeach
-
       @endif
 
 

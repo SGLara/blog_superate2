@@ -13,15 +13,15 @@
 </div>
 
 @if (session('blog_stored'))
-<div class="border border-success p-1 text-center text-success">Blog Guardado con Éxito</div>
+<div class="bg-success p-3 m-4 font-weight-bold text-center text-white">Blog Guardado con Éxito</div>
 @endif
 
 @if (session('blog_updated'))
-<div class="border border-primary p-1 text-center text-primary">Blog Actualizado con Éxito</div>
+<div class="bg-primary p-3 m-4 font-weight-bold text-center text-white">Blog Actualizado con Éxito</div>
 @endif
 
 @if (session('blog_deleted'))
-<div class="border border-danger p-1 text-center text-danger">Blog eliminado con Éxito</div>
+<div class="bg-danger p-3 m-4 font-weight-bold text-center text-white">Blog eliminado con Éxito</div>
 @endif
 
 
@@ -98,47 +98,51 @@
             </table>
         </div>
     </div>
-    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    @if (!count($blogs) == 0)
+        <div class="card-footer text-primary font-weight-bold">Último blog publicado por
+            {{ $lastBlog->user->first_name . " " . $lastBlog->user->last_name . " | " . $lastBlog->created_at }}
+        </div>
+    @endif
 </div>
 
-@if (!count($blogs) == 0)
-<!-- delete Modal-->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres eliminar este blog?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Seleccion "borrar" si realmente quieres borrarlo</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <form method="POST" action="{{ route('blog.blogs.destroy', $blog->id) }}">
-                    @method('DELETE')
-                    @csrf
-                    <input type="hidden" id="blog_id" name="blog_id" value="">
-                    <a class="btn btn-danger text-light font-weight-bold"
-                        onclick="$(this).closest('form').submit();">Borrar</a>
-                </form>
+    @if (!count($blogs) == 0)
+    <!-- delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres eliminar este blog?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleccion "borrar" si realmente quieres borrarlo</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                    <form method="POST" action="{{ route('blog.blogs.destroy', $blog->id) }}">
+                        @method('DELETE')
+                        @csrf
+                        <input type="hidden" id="blog_id" name="blog_id" value="">
+                        <a class="btn btn-danger text-light font-weight-bold"
+                            onclick="$(this).closest('form').submit();">Borrar</a>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-@endif
+    @endif
 
-@endsection
+    @endsection
 
-@section('js_blog_page')
-<script>
-    $('#deleteModal').on('show.bs.modal', function (event) {
+    @section('js_blog_page')
+    <script>
+        $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
             var blog_id = button.data('blogid') 
             
             var modal = $(this)
             modal.find('.modal-footer #blog_id').val(blog_id);
         })
-</script>
-@endsection
+    </script>
+    @endsection
