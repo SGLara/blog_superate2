@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 
 class AdminController extends Controller
 {
@@ -12,7 +14,12 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
-        return view('admin.index');
+    public function index()
+    {
+        $blogs = Blog::all();
+        $totalBlogs = Blog::all()->count();
+        $lastBlog = Blog::raw("ORDER BY created_at DESC")->first();
+
+        return view('admin.index', compact(['blogs', 'totalBlogs', 'lastBlog']));
     }
 }

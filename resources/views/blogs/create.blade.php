@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Crear Nuevo Blog</h1><br>
+<h1 class="font-weight-bold">Crear Nuevo Blog</h1><br>
 
 @if ($errors->any())
     <div class="alert alert-danger" role="alert">
@@ -31,8 +31,10 @@
         <textarea name="blog_content" id="content" required>{{ old('blog_content') }}</textarea>
     </div>
 
-    <div class="form-group pt-2">
+    <div class="col-md-6 mb-3">
         <input class="btn btn-primary" type="submit" value="Enviar">
+        <a href="{{ route('blog.blogs.index') }}" class="btn btn-secondary"
+        role="button" aria-pressed="true">Cancelar</a>
     </div>
 </form>
 

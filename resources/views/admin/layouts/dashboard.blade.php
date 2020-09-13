@@ -30,8 +30,8 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-        <a class="navbar-brand mr-1 font-weight-bold" href="#">¡Hola,
-            {{ Auth::user()->first_name." ".Auth::user()->last_name }}!</a>
+        <div class="navbar-brand mr-1 font-weight-bold">¡Hola,
+            {{ Auth::user()->first_name." ".Auth::user()->last_name }}!</div>
         &nbsp
         &nbsp
         <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
@@ -69,23 +69,35 @@
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
-            <li class="nav-item active">
+            @if (Auth::user()->is_admin)
+                <li class="nav-item {{ setActive('blog.admin.dashboard') }}">
+                    <a class="nav-link" href="{{ route('blog.admin.dashboard') }}">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+            @endif
+
+            <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('blog') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Blog Principal</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="{{ route('blog.blogs.index') }}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Blogs</span>
-                </a>
-            </li>
-            <li class="nav-item">
+            @if (!Auth::user()->is_admin)
+                <li class="nav-item {{ setActive('blog.blogs.index') }}">
+                    <a class="nav-link" href="{{ route('blog.blogs.index') }}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Blogs</span>
+                    </a>
+                </li>
+            @endif
+            {{-- Users view Coming Soon --}}
+            <!--<li class="nav-item">
                 <a class="nav-link" {{--href="{{ route('users') }}"--}}>
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Usuarios</span></a>
-            </li>
+            </li>-->
         </ul>
 
         <div id="content-wrapper">

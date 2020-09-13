@@ -58,9 +58,6 @@
             <a class="nav-link" href={{ route('blog.acerca') }}>ACERCA DEL BLOG</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={{ route('blog.ejemplo') }}>EJEMPLO</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href={{ route('blog.contacto') }}>CONTACTO</a>
           </li>
           <!-- Authentication Links -->
@@ -89,7 +86,9 @@
               </a>
 
               @if (Auth::user()->is_admin)
-              <a href="{{ route('blog.admin.dashboard') }}" class="dropdown-item">Dashboard</a>
+                <a href="{{ route('blog.admin.dashboard') }}" class="dropdown-item">Dashboard</a>
+              @else
+                <a href="{{ route('blog.blogs.index') }}" class="dropdown-item">Mis Blogs</a>
               @endif
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -111,16 +110,16 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <ul class="list-inline text-center">
-            <li class="list-inline-item">
+            {{-- <li class="list-inline-item">
               <a href="#">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
                 </span>
               </a>
-            </li>
+            </li> --}}
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.facebook.com/stivengustavo.lara/" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
@@ -128,7 +127,15 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.instagram.com/sglaravel/" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/SGLara/" target="_blank">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -136,7 +143,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2020</p>
+          <p class="copyright text-muted">Copyright &copy; ¡Supérate! Blog 2020 <br> by <i>Steven Lara</i></p>
         </div>
       </div>
     </div>

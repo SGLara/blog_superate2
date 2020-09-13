@@ -42,7 +42,7 @@
     </textarea>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
         <input class="btn btn-primary" type="submit" value="Enviar">
         <a href="{{ route('blog.blogs.index') }}" class="btn btn-secondary"
         role="button" aria-pressed="true">Cancelar</a>
