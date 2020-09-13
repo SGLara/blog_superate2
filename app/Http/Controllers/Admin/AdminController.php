@@ -18,7 +18,7 @@ class AdminController extends Controller
     {
         $blogs = Blog::all();
         $totalBlogs = Blog::all()->count();
-        $lastBlog = Blog::raw("ORDER BY created_at DESC")->first();
+        $lastBlog = Blog::orderBy('created_at', 'desc')->first();
 
         return view('admin.index', compact(['blogs', 'totalBlogs', 'lastBlog']));
     }

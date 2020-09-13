@@ -12,6 +12,17 @@
     </div>
 </div>
 
+@if (session('blog_stored'))
+<div class="border border-success p-1 text-center text-success">Blog Guardado con Éxito</div>
+@endif
+
+@if (session('blog_updated'))
+<div class="border border-primary p-1 text-center text-primary">Blog Actualizado con Éxito</div>
+@endif
+
+@if (session('blog_deleted'))
+<div class="border border-danger p-1 text-center text-danger">Blog eliminado con Éxito</div>
+@endif
 
 
 <!-- DataTables Example -->
@@ -90,9 +101,7 @@
     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 </div>
 
-@if (count($blogs) == 0)
-
-@else
+@if (!count($blogs) == 0)
 <!-- delete Modal-->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
