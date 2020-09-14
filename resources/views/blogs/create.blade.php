@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         <label for="image">Subir una imagen</label>
-        <input type="file" name="image" class="form-control-file" id="image">
+        <input type="file" name="image" class="form-control-file" id="image" accept="image/*">
     </div>
     <div class="form-group">
         <label for="content">Contenido de mi blog</label>

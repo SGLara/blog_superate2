@@ -25,7 +25,7 @@
     </div>
     <div class="form-group">
         <label for="image">Subir una imagen</label>
-        <input type="file" name="image" class="form-control-file" id="image" value="{{ $blog->image_url }}">
+        <input type="file" name="image" class="form-control-file" id="image" value="{{ $blog->image_url }}" accept="image/*">
         <div class="row">
             <img src="{{ asset('storage/img/blogs_images/'.$blog->image_url) }}" class="img-thumbnail mx-auto"
                 alt="{{ $blog->image_url }}" width="350">
