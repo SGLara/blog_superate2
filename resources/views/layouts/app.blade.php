@@ -51,15 +51,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href={{ route('inicio') }}>INICIO</a>
+          <li class="nav-item rounded bg-light">
+            <a class="nav-link text-muted" href={{ route('inicio') }}>INICIO</a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href={{ route('blog.acerca') }}>ACERCA DEL BLOG</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href={{ route('blog.contacto') }}>CONTACTO</a>
-          </li>
+          </li> --}}
           <!-- Authentication Links -->
           @guest
           <li class="nav-item">
@@ -80,16 +80,17 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                {{ __('Cerrar Sesión') }}
-              </a>
-
               @if (Auth::user()->is_admin)
                 <a href="{{ route('blog.admin.dashboard') }}" class="dropdown-item">Dashboard</a>
               @else
                 <a href="{{ route('blog.blogs.index') }}" class="dropdown-item">Mis Blogs</a>
               @endif
+
+              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Cerrar Sesión') }}
+              </a>
+
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf

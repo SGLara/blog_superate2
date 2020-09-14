@@ -19,7 +19,7 @@
           </div>
           <div class="mr-5">Tenemos <strong>{{ $totalBlogs }}</strong> blogs publicados!</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="#">
+        <a class="card-footer text-white clearfix small z-1" href="{{ route('blog.blogs.index') }}">
           <span class="float-left">Ver más detalles</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>

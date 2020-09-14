@@ -43,17 +43,18 @@
                   {{ $blog->title }}
                 </h2>
                 <h3 class="post-subtitle">
-                  {!! getShorterString($blog->content, 100) !!}
+                  {{ getShorterString($blog->content, 100) }}
                 </h3>
               </a>
               <p class="post-meta">Posted by
                 <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a>
-                {{ $blog->created_at }}</p>
+                {{ $blog->created_at }}
+              </p>
             </div>
           </div>
           <hr>
 
-          
+
           @endforeach
           <!-- Pager -->
           <div class="clearfix mt-5">
