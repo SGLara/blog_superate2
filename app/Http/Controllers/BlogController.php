@@ -11,7 +11,7 @@ class BlogController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -19,12 +19,17 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::all();
+        if (auth()->user()->is_admin) {
+            $blogs = Blog::all();
+        } else {
+            $blogs = Blog::where('created_by', auth()->user()->id)->get();
+        }
+
         $lastBlog = Blog::orderBy('created_at', 'desc')->first();
 
-        return view('blogs.index', compact(['blogs','lastBlog']));
+        return view('blogs.index', compact(['blogs', 'lastBlog']));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -47,38 +52,39 @@ class BlogController extends Controller
             'title' => 'required|string|max:191',
             'image' => 'required|image',
             'blog_content' => 'required',
-            ]);
-            //get the image from the form
-            $fileNameWithTheExtension = $request->image->getClientOriginalName();
-            
-            //get the file's name
-            $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
+        ]);
 
-            //get the extension's file
-            $extension = $request->image->getClientOriginalExtension();
+        //get the image from the form
+        $fileNameWithTheExtension = $request->image->getClientOriginalName();
+
+        //get the file's name
+        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
+
+        //get the extension's file
+        $extension = $request->image->getClientOriginalExtension();
 
         //new file name with timestamp
         $newFileName = $fileName . '_' . time() . '.' . $extension;
-        
+
         //save the image in public/img folder
         $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
 
         $user = auth()->user();
-        
+
         $blog = Blog::create([
             'title' => $request->title,
             'content' => $request->blog_content,
             'image_url' => $newFileName,
             'created_by' => $user->id,
-            ]);
-            
-            $request->session()->flash('blog_stored', true);
-            return redirect()->route('blog.blogs.index');
-        }
-        
-        /**
-         * Display the specified resource.
-         *
+        ]);
+
+        $request->session()->flash('blog_stored', true);
+        return redirect()->route('blog.blogs.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
@@ -99,7 +105,7 @@ class BlogController extends Controller
         $blog = Blog::findOrFail($id);
         return view('blogs.edit', ['blog' => $blog]);
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -117,13 +123,13 @@ class BlogController extends Controller
 
         //get the image from the form
         $fileNameWithTheExtension = $request->image->getClientOriginalName();
-        
+
         //get the file's name
         $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
 
         //get the extension's file
         $extension = $request->image->getClientOriginalExtension();
-        
+
         //new file name with timestamp
         $newFileName = $fileName . '_' . time() . '.' . $extension;
 
@@ -151,7 +157,7 @@ class BlogController extends Controller
         $blog = Blog::findOrFail($id);
 
         $oldImage = public_path() . '/storage/img/blogs_images/' . $blog->image_url;
-        
+
         if (file_exists($oldImage)) {
             unlink($oldImage);
         }

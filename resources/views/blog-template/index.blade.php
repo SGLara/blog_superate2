@@ -46,7 +46,7 @@
                   {{ getShorterString($blog->content, 100) }}
                 </h3>
               </a>
-              <p class="post-meta">Posted by
+              <p class="post-meta">Publicado por
                 <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a>
                 {{ $blog->created_at }}
               </p>
