@@ -40,7 +40,7 @@
             <div class="post-preview">
               <a href="{{ route('blog.show', $blog->id) }}">
                 <h2 class="post-title">
-                  {{ $blog->title }}
+                  {{ strip_tags($blog->title) }}
                 </h2>
                 <h3 class="post-subtitle">
                   {{ getShorterString($blog->content, 100) }}
