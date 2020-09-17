@@ -40,11 +40,11 @@
             <div class="post-preview">
               <a href="{{ route('blog.show', $blog->id) }}">
                 <h2 class="post-title">
-                  {{ strip_tags($blog->title) }}
+                  {{ $blog->title }}
                 </h2>
-                <h3 class="post-subtitle">
+                {{-- <h3 class="post-subtitle">
                   {{ getShorterString($blog->content, 100) }}
-                </h3>
+                </h3> --}}
               </a>
               <p class="post-meta">Publicado por
                 <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a>

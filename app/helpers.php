@@ -37,4 +37,10 @@ if (!function_exists('getShorterString')) {
             return $formatedString;
         }
     }
+
+    function cleanSpecialCharacters($string){
+        $string = htmlentities($string);
+        $string = preg_replace('/\&(.)[^;]*;/', '\\1', $string);
+        return $string;
+       }
 }
