@@ -9,7 +9,7 @@
             <ul class="submenu">
                 <li><a class="{{ setActive('nuestra-historia') }}" href="{{route('nuestra-historia')}}">Nuestra Historia</a></li>
                 <li><a class="{{ setActive('nuestra-filosofia') }}" href="{{route('nuestra-filosofia')}}">Nuestra Filosofía</a></li>
-                <li><a class="{{ setActive('efecto-multiplicador') }}" href="{{route('efecto-multiplicador')}}">Efecto Multiplicador</a></li>
+                {{-- <li><a class="{{ setActive('efecto-multiplicador') }}" href="{{route('efecto-multiplicador')}}">Efecto Multiplicador</a></li> --}}
                 <li><a class="{{ setActive('nuestro-equipo') }}" href="{{route('nuestro-equipo')}}">Nuestro Equipo</a></li>
             </ul>
         </li>
