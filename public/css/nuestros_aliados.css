@@ -56,27 +56,88 @@
   text-align: justify;
   padding: 30px; }
 
-.see1 > a {
+.see1 .myBtn1 {
   grid-area: see1;
   padding: 0 0 25px 25px;
   color: #00b6d8;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
-.see2 > a {
+.see2 .myBtn2 {
   grid-area: see2;
   padding: 0 0 25px 25px;
   color: #00b6d8;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
-.see3 > a {
+.see3 .myBtn3 {
   grid-area: see3;
   padding: 0 0 25px 25px;
   color: #00b6d8;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 .see1,
 .see2,
 .see3 {
   margin-bottom: 30px; }
+
+.modalmask {
+  position: fixed;
+  font-family: Arial, sans-serif;
+  top: -50px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none; }
+
+.modalmask:target {
+  opacity: 1;
+  pointer-events: auto; }
+
+.modal-content {
+  max-width: 1500px;
+  width: 75%;
+  position: relative;
+  padding: 5px 20px 13px 20px;
+  background: #fff;
+  border-radius: 3px;
+  -webkit-transition: all 500ms ease-in;
+  -moz-transition: all 500ms ease-in;
+  transition: all 500ms ease-in; }
+
+.rotate {
+  margin: 10% auto;
+  -webkit-transform: scale(-5, -5);
+  transform: scale(-5, -5); }
+
+.modalmask:target .rotate {
+  transform: rotate(360deg) scale(1, 1);
+  -webkit-transform: rotate(360deg) scale(1, 1); }
+
+.close {
+  background: #00b6d8;
+  color: #ffffff;
+  line-height: 25px;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  font-size: 16px; }
+
+.close:hover {
+  background: #00c800;
+  color: white;
+  text-shadow: 1px 1px 5px #007a00; }
 
 /*# sourceMappingURL=nuestros_aliados.css.map */
