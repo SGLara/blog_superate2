@@ -48,35 +48,12 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|string|max:191',
-            'image' => 'required|image',
-            'blog_content' => 'required',
-        ]);
-
-        //get the image from the form
-        $fileNameWithTheExtension = $request->image->getClientOriginalName();
-
-        //get the file's name
-        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
-
-        //get the extension's file
-        $extension = $request->image->getClientOriginalExtension();
-
-        //new file name with timestamp
-        $newFileName = $fileName . '_' . time() . '.' . $extension;
-
-        //save the image in public/img folder
-        $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
-
         $user = auth()->user();
 
-        $blog = Blog::create([
-            'title' => $request->title,
-            'content' => $request->blog_content,
-            'image_url' => $newFileName,
-            'created_by' => $user->id,
-        ]);
+        $blog = new Blog();
+        $this->prepareToSave($blog, $request);
+        $blog->created_by = $user->id;
+        $blog->save();
 
         $request->session()->flash('blog_stored', true);
         return redirect()->route('blog.blogs.index');
@@ -115,31 +92,9 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->validate([
-            'title' => 'required|string|max:191',
-            'image' => 'required|image',
-            'blog_content' => 'required',
-        ]);
-
-        //get the image from the form
-        $fileNameWithTheExtension = $request->image->getClientOriginalName();
-
-        //get the file's name
-        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
-
-        //get the extension's file
-        $extension = $request->image->getClientOriginalExtension();
-
-        //new file name with timestamp
-        $newFileName = $fileName . '_' . time() . '.' . $extension;
-
-        //save the image in public/img folder
-        $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
-
         $blog = Blog::findOrFail($id);
-        $blog->title = $request->title;
-        $blog->content = $request->blog_content;
-        $blog->image_url = $newFileName;
+        $this->prepareToSave($blog, $request);
+
         $blog->save();
 
         $request->session()->flash('blog_updated', true);
@@ -165,5 +120,33 @@ class BlogController extends Controller
 
         $request->session()->flash('blog_deleted', true);
         return redirect()->route('blog.blogs.index');
+    }
+
+    private function prepareToSave(Blog $blog, Request $request)
+    {
+        $data = $request->validate([
+            'title' => 'required|string|max:191',
+            'image' => 'required|image',
+            'blog_content' => 'required',
+        ]);
+
+        //get the image from the form
+        $fileNameWithTheExtension = $request->image->getClientOriginalName();
+
+        //get the file's name
+        $fileName = pathinfo($fileNameWithTheExtension, PATHINFO_FILENAME);
+
+        //get the extension's file
+        $extension = $request->image->getClientOriginalExtension();
+
+        //new file name with timestamp
+        $newFileName = $fileName . '_' . time() . '.' . $extension;
+
+        //save the image in public/img folder
+        $saveImage = $request->image->storeAs('public/img/blogs_images', $newFileName);
+
+        $blog->title = $request->title;
+        $blog->content = $request->blog_content;
+        $blog->image_url = $newFileName;
     }
 }
