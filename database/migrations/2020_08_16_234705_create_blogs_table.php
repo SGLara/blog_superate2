@@ -13,14 +13,17 @@ class CreateBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 191)->index()->unique();
-            $table->text('content');
-            $table->string('image_url');
-            $table->unsignedBigInteger('created_by')->index();
-            $table->timestamps();
-        });
+        Schema::create(
+            'blogs',
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('title', 191)->index()->unique();
+                $table->text('content');
+                $table->string('image_url');
+                $table->unsignedBigInteger('created_by')->index();
+                $table->timestamps();
+            }
+        );
     }
 
     /**

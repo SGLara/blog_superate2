@@ -13,12 +13,15 @@ class CreateSuperateCentersTable extends Migration
      */
     public function up()
     {
-        Schema::create('superate_centers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100)->index()->unique();
-            $table->year('year')->index();
-            $table->timestamps();
-        });
+        Schema::create(
+            'superate_centers',
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('name', 100)->index()->unique();
+                $table->year('year')->index();
+                $table->timestamps();
+            }
+        );
     }
 
     /**

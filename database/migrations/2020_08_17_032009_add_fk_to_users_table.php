@@ -13,9 +13,12 @@ class AddFkToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreign('superate_center_id')->references('id')->on('superate_centers');
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->foreign('superate_center_id')->references('id')->on('superate_centers');
+            }
+        );
     }
 
     /**
@@ -25,8 +28,11 @@ class AddFkToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['superate_center_id']);
-        });
+        Schema::table(
+            'users',
+            function (Blueprint $table) {
+                $table->dropForeign(['superate_center_id']);
+            }
+        );
     }
 }

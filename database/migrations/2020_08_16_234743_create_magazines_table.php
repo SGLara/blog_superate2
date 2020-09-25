@@ -13,11 +13,14 @@ class CreateMagazinesTable extends Migration
      */
     public function up()
     {
-        Schema::create('magazines', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 25)->index();
-            $table->timestamps();
-        });
+        Schema::create(
+            'magazines',
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('title', 25)->index();
+                $table->timestamps();
+            }
+        );
     }
 
     /**

@@ -13,10 +13,12 @@ class AddFkToBlogsTable extends Migration
      */
     public function up()
     {
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->foreign('created_by')->references('id')->on('users');
-            
-        });
+        Schema::table(
+            'blogs',
+            function (Blueprint $table) {
+                $table->foreign('created_by')->references('id')->on('users');
+            }
+        );
     }
 
     /**
@@ -26,8 +28,11 @@ class AddFkToBlogsTable extends Migration
      */
     public function down()
     {
-        Schema::table('blogs', function (Blueprint $table) {
-            $table->dropForeign(['created_by']);
-        });
+        Schema::table(
+            'blogs',
+            function (Blueprint $table) {
+                $table->dropForeign(['created_by']);
+            }
+        );
     }
 }
