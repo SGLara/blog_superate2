@@ -47,8 +47,8 @@
                 </h3> --}}
               </a>
               <p class="post-meta">Publicado por
-                <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a>
-                {{ $blog->created_at }}
+                <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a> el 
+                {{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
               </p>
             </div>
           </div>
