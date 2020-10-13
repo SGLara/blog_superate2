@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Blog;
+use App\{Blog, User};
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -16,10 +16,11 @@ class AdminController extends Controller
 
     public function index()
     {
-        $blogs = Blog::all();
-        $totalBlogs = Blog::all()->count();
+        $blogs = Blog::get();
+        $totalBlogs = Blog::get()->count();
         $lastBlog = Blog::orderBy('created_at', 'desc')->first();
+        $users = User::get()->count();
 
-        return view('admin.index', compact(['blogs', 'totalBlogs', 'lastBlog']));
+        return view('admin.index', compact(['blogs', 'totalBlogs', 'lastBlog', 'users']));
     }
 }

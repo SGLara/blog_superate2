@@ -44,6 +44,8 @@ Route::prefix('blog')->name('blog.')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard', 'Admin\AdminController@index')->name('dashboard');
+        Route::get('users/registered', 'Admin\UsersController@showUsers')->name('users.registered');
+        Route::resource('users', 'Admin\UsersController');
     });
 });
 

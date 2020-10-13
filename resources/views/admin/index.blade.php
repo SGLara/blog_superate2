@@ -17,7 +17,7 @@
           <div class="card-body-icon">
             <i class="fas fa-fw fa-list"></i>
           </div>
-          <div class="mr-5">Tenemos <strong>{{ $totalBlogs }}</strong> blogs publicados!</div>
+          <div class="mr-5">¡Tenemos <strong>{{ $totalBlogs }}</strong> blogs publicados!</div>
         </div>
         <a class="card-footer text-white clearfix small z-1" href="{{ route('blog.blogs.index') }}">
           <span class="float-left">Ver más detalles</span>
@@ -33,10 +33,10 @@
           <div class="card-body-icon">
             <i class="fas fa-fw fa-list"></i>
           </div>
-          <div class="mr-5">11 New Tasks!</div>
+          <div class="mr-5">¡Tenemos <strong>{{ $users }}</strong> usuarios registrados!</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="#">
-          <span class="float-left">View Details</span>
+        <a class="card-footer text-white clearfix small z-1" href="{{ route('blog.admin.users.registered') }}">
+          <span class="float-left">Ver más detalles</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>
           </span>
@@ -130,7 +130,7 @@
     </div>
     @if (!count($blogs) == 0)
     <div class="card-footer text-primary font-weight-bold">Último blog publicado por
-      {{ $lastBlog->user->first_name . " " . $lastBlog->user->last_name . " | " . $lastBlog->created_at }}
+      {{ $lastBlog->user->first_name . " " . $lastBlog->user->last_name . " | " . $lastBlog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
     </div>
     @endif
   </div>
@@ -147,7 +147,7 @@
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Seleccion "borrar" si realmente quieres borrarlo</div>
+        <div class="modal-body">Selecciona "borrar" si realmente quieres eliminarlo</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
           <form method="POST" action="{{ route('blog.blogs.destroy', $blog->id) }}">

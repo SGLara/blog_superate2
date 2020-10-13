@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
 class Blog extends Model
 {
-    // use SoftDeletes;
+    use SoftDeletes;
+
     protected $guarded = ['id'];
 
     public function user(){

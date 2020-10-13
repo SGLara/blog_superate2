@@ -80,24 +80,27 @@
 
             <li class="nav-item dropdown">
                 <a class="nav-link" href="{{ route('blog') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-book"></i>
                     <span>Blog Principal</span>
                 </a>
             </li>
+
             @if (!Auth::user()->is_admin)
                 <li class="nav-item {{ setActive('blog.blogs.index') }}">
                     <a class="nav-link" href="{{ route('blog.blogs.index') }}">
-                        <i class="fas fa-fw fa-table"></i>
+                        <i class="fas fa-fw fa-book"></i>
                         <span>Blogs</span>
                     </a>
                 </li>
             @endif
-            {{-- Users view Coming Soon --}}
-            <!--<li class="nav-item">
-                <a class="nav-link" {{--href="{{ route('users') }}"--}}>
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Usuarios</span></a>
-            </li>-->
+            {{-- Users view --}}
+            @if (Auth::user()->is_admin)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blog.admin.users.registered') }}">
+                        <i class="fas fa-fw fa-user"></i>
+                        <span>Usuarios</span></a>
+                </li>
+            @endif
         </ul>
 
         <div id="content-wrapper">

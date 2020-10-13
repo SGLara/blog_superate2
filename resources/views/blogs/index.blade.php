@@ -7,21 +7,31 @@
         <h1 class="font-weight-bold">Blogs Publicados</h1>
     </div>
     <div class="col-md-6">
-        <a href="{{ route('blog.blogs.create') }}" class="btn btn-primary btn-lg float-md-right font-weight-bold"
-            role="button" aria-pressed="true">Crear Nuevo Blog</a>
+        <a href="{{ route('blog.blogs.create') }}" class="btn btn-primary btn-lg float-md-right font-weight-bold" role="button" aria-pressed="true">Crear Nuevo Blog</a>
     </div>
 </div>
 
 @if (session('blog_stored'))
-<div class="bg-success p-3 m-4 font-weight-bold text-center text-white">Blog Guardado con Éxito</div>
+<div class="alert alert-primary alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Blog Guardado con Éxito</strong>
+</div>
+<div class="bg-success p-3 m-4 font-weight-bold text-center text-white"></div>
 @endif
 
 @if (session('blog_updated'))
-<div class="bg-primary p-3 m-4 font-weight-bold text-center text-white">Blog Actualizado con Éxito</div>
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Blog Actualizado con Éxito</strong>
+</div>
+<div class="bg-primary p-3 m-4 font-weight-bold text-center text-white"></div>
 @endif
 
 @if (session('blog_deleted'))
-<div class="bg-danger p-3 m-4 font-weight-bold text-center text-white">Blog eliminado con Éxito</div>
+<div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Blog Eliminado con Éxito</strong>
+</div>
 @endif
 
 
@@ -59,13 +69,13 @@
                         <td colspan="6">
                             <center>
                                 @if (!auth()->user()->is_admin)
-                                    <H6 class="text-danger font-weight-bold">
-                                        ¡Ooops! No has publicado nada aún, ¡Anímate! y publica algo nuevo...
-                                    </H6>
+                                <H6 class="text-danger font-weight-bold">
+                                    ¡Ooops! No has publicado nada aún, ¡Anímate! y publica algo nuevo...
+                                </H6>
                                 @else
-                                    <H6 class="text-danger font-weight-bold">
-                                        ¡Ooops! No hay blogs por el momento, porfavor vuelva pronto...
-                                    </H6>
+                                <H6 class="text-danger font-weight-bold">
+                                    ¡Ooops! No hay blogs por el momento, porfavor vuelva pronto...
+                                </H6>
                                 @endif
                             </center>
                         </td>
@@ -84,8 +94,7 @@
                         </td>
                         <td>
                             <center>
-                                <img src="{{ asset('storage/img/blogs_images/' . $blog->image_url) }}"
-                                    alt="{{ $blog->image_url }}" width="150" loading="lazy"></center>
+                                <img src="{{ asset('storage/img/blogs_images/' . $blog->image_url) }}" alt="{{ $blog->image_url }}" width="150" loading="lazy"></center>
                         </td>
                         <td>
                             <center>{{ $blog->user->first_name." ".$blog->user->last_name }}</center>
@@ -93,8 +102,7 @@
                         <td>
                             <center>
                                 <a href="{{ route('blog.blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#deleteModal"
-                                    data-blogid="{{ $blog->id }}">
+                                <a href="#" data-toggle="modal" data-target="#deleteModal" data-blogid="{{ $blog->id }}">
                                     <i class="fa fa-trash-alt"></i></a>
                             </center>
                         </td>
@@ -107,15 +115,14 @@
     </div>
     @if (!count($blogs) == 0)
     <div class="card-footer text-primary font-weight-bold">Último blog publicado por
-        {{ $lastBlog->user->first_name . " " . $lastBlog->user->last_name . " | " . $lastBlog->created_at }}
+        {{ $lastBlog->user->first_name . " " . $lastBlog->user->last_name . " | " . $lastBlog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
     </div>
     @endif
 </div>
 
 @if (!count($blogs) == 0)
 <!-- delete Modal-->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -131,8 +138,7 @@
                     @method('DELETE')
                     @csrf
                     <input type="hidden" id="blog_id" name="blog_id" value="">
-                    <a class="btn btn-danger text-light font-weight-bold"
-                        onclick="$(this).closest('form').submit();">Borrar</a>
+                    <a class="btn btn-danger text-light font-weight-bold" onclick="$(this).closest('form').submit();">Borrar</a>
                 </form>
             </div>
         </div>
