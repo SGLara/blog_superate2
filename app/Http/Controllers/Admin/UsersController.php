@@ -47,7 +47,7 @@ class UsersController extends Controller
      */
     public function showUsers()
     {
-        $users = User::get();
+        $users = User::withTrashed()->get();
         $lastUser = User::orderBy('created_at', 'desc')->first();
 
         return view('admin.users', compact(['users', 'lastUser']));
@@ -87,6 +87,14 @@ class UsersController extends Controller
         User::destroy($id);
 
         $request->session()->flash('user_deleted', true);
+        return redirect()->route('blog.admin.users.registered');
+    }
+
+    public function restore(Request $request, $id)
+    {
+        User::withTrashed()->where('id', $id)->restore();
+
+        $request->session()->flash('user_restored', true);
         return redirect()->route('blog.admin.users.registered');
     }
 }

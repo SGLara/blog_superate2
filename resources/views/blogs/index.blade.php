@@ -12,7 +12,7 @@
 </div>
 
 @if (session('blog_stored'))
-<div class="alert alert-primary alert-dismissible">
+<div class="alert alert-primary alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Blog Guardado con Éxito</strong>
 </div>
@@ -20,7 +20,7 @@
 @endif
 
 @if (session('blog_updated'))
-<div class="alert alert-success alert-dismissible">
+<div class="alert alert-success alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Blog Actualizado con Éxito</strong>
 </div>
@@ -28,7 +28,7 @@
 @endif
 
 @if (session('blog_deleted'))
-<div class="alert alert-danger alert-dismissible">
+<div class="alert alert-danger alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Blog Eliminado con Éxito</strong>
 </div>
