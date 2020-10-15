@@ -16,7 +16,7 @@ class AddDeletedAtToUsersTable extends Migration
         Schema::table(
             'users', 
             function (Blueprint $table) {
-                $table->timestamp('deleted_at')->nullable();
+                $table->softDeletes();
             }
         );
     }
@@ -31,7 +31,7 @@ class AddDeletedAtToUsersTable extends Migration
         Schema::table(
             'users', 
             function (Blueprint $table) {
-                $table->dropColumn('deleted_at');
+                $table->dropSoftDeletes();
             }
         );
     }

@@ -16,7 +16,7 @@ class AddDeletedAtToBlogsTable extends Migration
         Schema::table(
             'blogs', 
             function (Blueprint $table) {
-                $table->timestamp('deleted_at')->nullable();
+                $table->softDeletes();
             }
         );
     }
@@ -31,7 +31,7 @@ class AddDeletedAtToBlogsTable extends Migration
         Schema::table(
             'blogs', 
             function (Blueprint $table) {
-                $table->dropColumn('deleted_at');
+                $table->dropSoftDeletes();
             }
         );
     }

@@ -92,7 +92,7 @@ class UsersController extends Controller
 
     public function restore(Request $request, $id)
     {
-        User::withTrashed()->where('id', $id)->restore();
+        User::withTrashed()->find($id)->restore();
 
         $request->session()->flash('user_restored', true);
         return redirect()->route('blog.admin.users.registered');
