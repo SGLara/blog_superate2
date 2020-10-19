@@ -20,7 +20,7 @@ class BlogController extends Controller
     public function index()
     {
         if (auth()->user()->is_admin) {
-            $blogs = Blog::all();
+            $blogs = Blog::withTrashed()->get();
         } else {
             $blogs = Blog::where('created_by', auth()->user()->id)->get();
         }
@@ -131,7 +131,7 @@ class BlogController extends Controller
         Blog::withTrashed()->find($request->blog_id)->restore();
 
         $request->session()->flash('blog_restored', true);
-        return redirect()->route('blog.admin.users.registered');
+        return redirect()->route('blog.blogs.index');
     }
 
     private function prepareToSave(Blog $blog, Request $request)

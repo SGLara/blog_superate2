@@ -35,7 +35,7 @@
 @if (session('blog_restored'))
 <div class="alert alert-success alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Usuario Restaurado con Éxito</strong>
+    <strong>Blog Restaurado con Éxito</strong>
 </div>
 @endif
 
