@@ -113,14 +113,25 @@ class BlogController extends Controller
 
         $oldImage = public_path() . '/storage/img/blogs_images/' . $blog->image_url;
 
-        if (file_exists($oldImage)) {
-            unlink($oldImage);
-        }
+        /**
+         * This line deletes any image from a blog
+         */
+        // if (file_exists($oldImage)) {
+        //     unlink($oldImage);
+        // }
 
         $blog->delete();
 
         $request->session()->flash('blog_deleted', true);
         return redirect()->route('blog.blogs.index');
+    }
+
+    public function restore(Request $request)
+    {
+        Blog::withTrashed()->find($request->blog_id)->restore();
+
+        $request->session()->flash('blog_restored', true);
+        return redirect()->route('blog.admin.users.registered');
     }
 
     private function prepareToSave(Blog $blog, Request $request)

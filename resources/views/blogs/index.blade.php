@@ -16,7 +16,6 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Blog Guardado con Éxito</strong>
 </div>
-<div class="bg-success p-3 m-4 font-weight-bold text-center text-white"></div>
 @endif
 
 @if (session('blog_updated'))
@@ -24,7 +23,6 @@
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Blog Actualizado con Éxito</strong>
 </div>
-<div class="bg-primary p-3 m-4 font-weight-bold text-center text-white"></div>
 @endif
 
 @if (session('blog_deleted'))
@@ -33,6 +31,14 @@
     <strong>Blog Eliminado con Éxito</strong>
 </div>
 @endif
+
+@if (session('blog_restored'))
+<div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Usuario Restaurado con Éxito</strong>
+</div>
+@endif
+
 
 
 <!-- DataTables Example -->
@@ -82,7 +88,11 @@
                     </tr>
                     @else
                     @foreach ($blogs as $blog)
+                    @if (!is_null($blog->deleted_at))
+                    <tr class="table-danger text-danger font-weight-bold">
+                        @else
                     <tr>
+                        @endif
                         <td>
                             <center>{{ $blog->id }}</center>
                         </td>
@@ -101,9 +111,16 @@
                         </td>
                         <td>
                             <center>
+                                @if (!is_null($blog->deleted_at))
+                                <a href="#" data-toggle="modal" data-target="#restoreModal" data-blogid="{{ $blog->id }}">
+                                    <i class="fa fa-trash-restore"></i>
+                                </a>
+                                @else
                                 <a href="{{ route('blog.blogs.edit', $blog->id) }}"><i class="fa fa-edit"></i></a>
                                 <a href="#" data-toggle="modal" data-target="#deleteModal" data-blogid="{{ $blog->id }}">
-                                    <i class="fa fa-trash-alt"></i></a>
+                                    <i class="fa fa-trash-alt"></i>
+                                </a>
+                                @endif
                             </center>
                         </td>
                     </tr>
@@ -131,7 +148,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Seleccion "borrar" si realmente quieres borrarlo</div>
+            <div class="modal-body">Click en "Borrar" si realmente quieres eliminarlo</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
                 <form method="POST" action="{{ route('blog.blogs.destroy', $blog->id) }}">
@@ -139,6 +156,28 @@
                     @csrf
                     <input type="hidden" id="blog_id" name="blog_id" value="">
                     <a class="btn btn-danger text-light font-weight-bold" onclick="$(this).closest('form').submit();">Borrar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- restore Modal-->
+<div class="modal fade" id="restoreModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres restaurar este blog?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Click en "Restaurar" si realmente quieres eliminarlo</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+                <form method="POST" action="{{ route('blog.blogs.restore', $blog->id) }}">
+                    @csrf
+                    <input type="hidden" id="blog_id" name="blog_id" value="">
+                    <a class="btn btn-success text-light font-weight-bold" onclick="$(this).closest('form').submit();">Restaurar</a>
                 </form>
             </div>
         </div>
@@ -156,6 +195,13 @@
             
             var modal = $(this)
             modal.find('.modal-footer #blog_id').val(blog_id);
-        })
+        });
+    $('#restoreModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) 
+            var blog_id = button.data('blogid') 
+            
+            var modal = $(this)
+            modal.find('.modal-footer #blog_id').val(blog_id);
+        });
 </script>
 @endsection

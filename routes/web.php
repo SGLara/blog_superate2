@@ -40,6 +40,7 @@ Route::prefix('blog')->name('blog.')->group(function () {
     Route::view('contacto', 'blog-template.contact')->name('contacto');
     Route::view('ejemplo', 'blog-template.post')->name('ejemplo');
     Route::get('show/{id}', 'HomeController@show')->name('show');
+    Route::post('blogs/{blog}', 'BlogController@restore')->name('blogs.restore');
     Route::resource('blogs', 'BlogController');
 
     Route::prefix('admin')->name('admin.')->group(function () {
