@@ -96,12 +96,12 @@
                         </td>
                         <td>
                             <center>
-                                @if (!is_null($user->deleted_at))
+                                @if ((auth()->user()->id) == $user->id)
+                                <i class="fa fa-user" style="color: green"></i>
+                                @elseif (!is_null($user->deleted_at))
                                 <a href="#" data-toggle="modal" data-target="#restoreModal" data-userid="{{ $user->id }}">
                                     <i class="fa fa-trash-restore"></i>
                                 </a>
-                                @elseif ((auth()->user()->id) == $user->id)
-                                <i class="fa fa-user" style="color: green"></i>
                                 @else
                                 <a href="#" data-toggle="modal" data-target="#deleteModal" data-userid="{{ $user->id }}">
                                     <i class="fa fa-trash-alt"></i>
@@ -173,21 +173,21 @@
 
 @endsection
 
-@section('js_blog_page')
+@section('js_user_view')
 <script>
     $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
-            var blog_id = button.data('userid') 
+            var user_id = button.data('userid') 
             
             var modal = $(this)
             modal.find('.modal-footer #user_id').val(user_id);
-        })
+        });
     $('#restoreModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
-            var blog_id = button.data('userid') 
+            var user_id = button.data('userid') 
             
             var modal = $(this)
             modal.find('.modal-footer #user_id').val(user_id);
-        })
+        });
 </script>
 @endsection

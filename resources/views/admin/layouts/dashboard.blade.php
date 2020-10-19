@@ -181,6 +181,7 @@
     <script src={{ asset('js/admin/demo/datatables-demo.js') }}></script>
     <script src={{ asset('js/admin/demo/chart-area-demo.js') }}></script>
     @yield('js_blog_page')
+    @yield('js_user_view')
 </body>
 
 </html>

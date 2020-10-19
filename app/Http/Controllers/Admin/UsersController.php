@@ -82,17 +82,17 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request)
     {
-        User::destroy($id);
+        User::destroy($request->user_id);
 
         $request->session()->flash('user_deleted', true);
         return redirect()->route('blog.admin.users.registered');
     }
 
-    public function restore(Request $request, $id)
+    public function restore(Request $request)
     {
-        User::withTrashed()->find($id)->restore();
+        User::withTrashed()->find($request->user_id)->restore();
 
         $request->session()->flash('user_restored', true);
         return redirect()->route('blog.admin.users.registered');

@@ -107,15 +107,16 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, $id)
+    public function destroy(Request $request)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::findOrFail($request->blog_id);
 
         $oldImage = public_path() . '/storage/img/blogs_images/' . $blog->image_url;
 
         if (file_exists($oldImage)) {
             unlink($oldImage);
         }
+
         $blog->delete();
 
         $request->session()->flash('blog_deleted', true);
