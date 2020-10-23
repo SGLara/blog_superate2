@@ -45,7 +45,6 @@ Route::prefix('blog')->name('blog.')->group(function () {
 
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard', 'Admin\AdminController@index')->name('dashboard');
-        Route::get('users/registered', 'Admin\UsersController@showUsers')->name('users.registered');
         Route::post('users/{user}', 'Admin\UsersController@restore')->name('users.restore');
         Route::resource('users', 'Admin\UsersController');
     });

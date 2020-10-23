@@ -95,8 +95,8 @@
             @endif
             {{-- Users view --}}
             @if (Auth::user()->is_admin)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('blog.admin.users.registered') }}">
+                <li class="nav-item {{ setActive('blog.admin.users.index') }}">
+                    <a class="nav-link" href="{{ route('blog.admin.users.index') }}">
                         <i class="fas fa-fw fa-user"></i>
                         <span>Usuarios</span></a>
                 </li>

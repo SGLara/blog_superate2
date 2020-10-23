@@ -35,7 +35,7 @@
           </div>
           <div class="mr-5">¡Tenemos <strong>{{ $users }}</strong> usuarios registrados!</div>
         </div>
-        <a class="card-footer text-white clearfix small z-1" href="{{ route('blog.admin.users.registered') }}">
+        <a class="card-footer text-white clearfix small z-1" href="{{ route('blog.admin.users.index') }}">
           <span class="float-left">Ver más detalles</span>
           <span class="float-right">
             <i class="fas fa-angle-right"></i>

@@ -15,7 +15,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::withTrashed()->get();
+        $lastUser = User::orderBy('created_at', 'desc')->first();
+
+        return view('admin.users.index', compact(['users', 'lastUser']));
     }
 
     /**
@@ -37,20 +40,6 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showUsers()
-    {
-        $users = User::withTrashed()->get();
-        $lastUser = User::orderBy('created_at', 'desc')->first();
-
-        return view('admin.users', compact(['users', 'lastUser']));
     }
 
     /**
@@ -87,7 +76,7 @@ class UsersController extends Controller
         User::destroy($request->user_id);
 
         $request->session()->flash('user_deleted', true);
-        return redirect()->route('blog.admin.users.registered');
+        return redirect()->route('blog.admin.users.index');
     }
 
     public function restore(Request $request)
@@ -95,6 +84,6 @@ class UsersController extends Controller
         User::withTrashed()->find($request->user_id)->restore();
 
         $request->session()->flash('user_restored', true);
-        return redirect()->route('blog.admin.users.registered');
+        return redirect()->route('blog.admin.users.index');
     }
 }
