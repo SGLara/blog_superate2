@@ -43,6 +43,8 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
+                        <th>Role</th>
+                        <th>Permisos</th>
                         <th>Administrador</th>
                         <th>Herramientas</th>
                     </tr>
@@ -53,6 +55,8 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
+                        <th>Role</th>
+                        <th>Permisos</th>
                         <th>Administrador</th>
                         <th>Herramientas</th>
                     </tr>
@@ -87,6 +91,14 @@
                         <td>
                             <center>{{ $user->email }}</center>
                         </td>
+                        {{-- ROLE AND PERMISSION COLUMNS --}}
+                        <td>
+                            <center>Coming Soon!</center>
+                        </td>
+                        <td>
+                            <center>Coming Soon!</center>
+                        </td>
+                        {{---------------------------------}}
                         <td>
                             @if ($user->is_admin == 1)
                             <center>Administrador</center>
@@ -96,6 +108,7 @@
                         </td>
                         <td>
                             <center>
+                                <a href="{{ route('blog.admin.users.show', $user->id) }}"><i class="fa fa-eye"></i></a>
                                 @if ((auth()->user()->id) == $user->id)
                                 <i class="fa fa-user" style="color: green"></i>
                                 @elseif (!is_null($user->deleted_at))
@@ -107,6 +120,7 @@
                                     <i class="fa fa-trash-alt"></i>
                                 </a>
                                 @endif
+                                <a href="{{ route('blog.admin.users.edit', $user->id) }}"><i class="fa fa-edit"></i></a>
                             </center>
                         </td>
                     </tr>
