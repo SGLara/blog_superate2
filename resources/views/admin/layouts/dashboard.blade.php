@@ -54,8 +54,7 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto mr-0">
             <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -70,12 +69,12 @@
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
             @if (Auth::user()->is_admin)
-                <li class="nav-item {{ setActive('blog.admin.dashboard') }}">
-                    <a class="nav-link" href="{{ route('blog.admin.dashboard') }}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+            <li class="nav-item {{ setActive('blog.admin.dashboard') }}">
+                <a class="nav-link" href="{{ route('blog.admin.dashboard') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
             @endif
 
             <li class="nav-item dropdown">
@@ -85,21 +84,20 @@
                 </a>
             </li>
 
-            @if (!Auth::user()->is_admin)
-                <li class="nav-item {{ setActive('blog.blogs.index') }}">
-                    <a class="nav-link" href="{{ route('blog.blogs.index') }}">
-                        <i class="fas fa-fw fa-book"></i>
-                        <span>Blogs</span>
-                    </a>
-                </li>
-            @endif
+            <li class="nav-item {{ setActive('blog.blogs.index') }}">
+                <a class="nav-link" href="{{ route('blog.blogs.index') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Blogs</span>
+                </a>
+            </li>
+
             {{-- Users view --}}
             @if (Auth::user()->is_admin)
-                <li class="nav-item {{ setActive('blog.admin.users.index') }}">
-                    <a class="nav-link" href="{{ route('blog.admin.users.index') }}">
-                        <i class="fas fa-fw fa-user"></i>
-                        <span>Usuarios</span></a>
-                </li>
+            <li class="nav-item {{ setActive('blog.admin.users.index') }}">
+                <a class="nav-link" href="{{ route('blog.admin.users.index') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Usuarios</span></a>
+            </li>
             @endif
         </ul>
 
@@ -135,8 +133,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

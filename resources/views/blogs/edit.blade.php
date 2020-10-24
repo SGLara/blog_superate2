@@ -44,7 +44,7 @@
 
     <div class="col-md-6 mb-3">
         <input class="btn btn-primary" type="submit" value="Guardar">
-        <a href="{{ route('blog.blogs.index') }}" class="btn btn-secondary"
+        <a href="{{ url()->previous() }}" class="btn btn-secondary"
         role="button" aria-pressed="true">Cancelar</a>
     </div>
 </form>

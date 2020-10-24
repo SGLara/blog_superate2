@@ -15,10 +15,24 @@
     </div>
 </div>
 
+@if (session('user_stored'))
+<div class="alert alert-success alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Usuario Creado con Éxito</strong>
+</div>
+@endif
+
 @if (session('user_deleted'))
 <div class="alert alert-danger alert-dismissible fade show">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     <strong>Usuario Eliminado con Éxito</strong>
+</div>
+@endif
+
+@if (session('user_updated'))
+<div class="alert alert-primary alert-dismissible fade show">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Usuario Actualizado con Éxito</strong>
 </div>
 @endif
 

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -26,11 +27,10 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +39,20 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->session()->flash('user_stored', true);
+        return redirect()->route('blog.admin.users.index');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show(User $user)
+    {
+        return view('admin.users.show', compact(['user']));
     }
 
     /**
@@ -48,9 +61,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('admin.users.edit', compact(['user']));
     }
 
     /**
@@ -62,7 +75,27 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $data = $request->validate([
+        //     'first_name' => 'required|string|max:191',
+        //     'last_name' => 'required|string|max:191',
+        //     'email' => 'required|string|max:191',
+        //     'password' => 'required|string|max:191',
+        //     'password_confirmation' => 'required|string|max:191',
+        // ]);
+
+        $user = User::findOrFail($id);
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+
+        if (!is_null($request->password)) {
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        $request->session()->flash('user_updated', true);
+        return redirect()->route('blog.admin.users.index');
     }
 
     /**
