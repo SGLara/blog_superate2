@@ -48,12 +48,13 @@ class UsersController extends Controller
             'password_confirmation' => 'required|string|max:191',
         ]);
 
-        $user = User::create([
+        $user = User::make([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,
-            'password' => $request->password,
         ]);
+        $user->password = Hash::make($request->password);
+        $user->save();
 
         $request->session()->flash('user_stored', true);
         return redirect()->route('blog.admin.users.index');
