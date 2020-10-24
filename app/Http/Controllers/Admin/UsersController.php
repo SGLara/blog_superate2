@@ -29,8 +29,9 @@ class UsersController extends Controller
      */
     public function create(Request $request)
     {
+        return view('admin.users.create');
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,7 +40,21 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $data = $request->validate([
+            'first_name' => 'required|string|max:191',
+            'last_name' => 'required|string|max:191',
+            'email' => 'required|string|max:191',
+            'password' => 'required|string|max:191',
+            'password_confirmation' => 'required|string|max:191',
+        ]);
+
+        $user = User::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+
         $request->session()->flash('user_stored', true);
         return redirect()->route('blog.admin.users.index');
     }
@@ -75,13 +90,6 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $data = $request->validate([
-        //     'first_name' => 'required|string|max:191',
-        //     'last_name' => 'required|string|max:191',
-        //     'email' => 'required|string|max:191',
-        //     'password' => 'required|string|max:191',
-        //     'password_confirmation' => 'required|string|max:191',
-        // ]);
 
         $user = User::findOrFail($id);
         $user->first_name = $request->first_name;

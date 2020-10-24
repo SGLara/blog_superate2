@@ -4,7 +4,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h2>Editar Usuario</h2>
+            <h1 class="font-weight-bold">Editar Usuario</h1>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('blog.admin.users.update', $user->id) }}" enctype="multipart/form-data">

@@ -1,17 +1,19 @@
 @extends('admin.layouts.dashboard')
 
 @section('content')
-<!-- Breadcrumbs-->
-<ol class="breadcrumb">
+ <!-- Breadcrumbs-->
+ <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="#">Usuarios</a>
+        <a href="#" class="text-success font-weight-bold">{{ Auth::user()->first_name." ".Auth::user()->last_name }}</a>
     </li>
-    <li class="breadcrumb-item active">Administración</li>
+    <li class="breadcrumb-item active"> {{ (Auth::user()->is_admin) ? 'Administrador' : 'Usuario' }}</li>
 </ol>
-
 <div class="row py-lg-2">
     <div class="col-md-6">
         <h1 class="font-weight-bold">Usuarios Registrados</h1>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ route('blog.admin.users.create') }}" class="btn btn-primary btn-lg float-md-right font-weight-bold" role="button" aria-pressed="true">Crear Nuevo Usuario</a>
     </div>
 </div>
 
