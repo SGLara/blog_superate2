@@ -43,9 +43,9 @@ class UsersController extends Controller
         $data = $request->validate([
             'first_name' => 'required|string|max:191',
             'last_name' => 'required|string|max:191',
-            'email' => 'required|string|max:191',
-            'password' => 'required|string|max:191',
-            'password_confirmation' => 'required|string|max:191',
+            'email' => 'required|unique:users|email|max:191',
+            'password' => 'required|between:8,255|confirmed',
+            'password_confirmation' => 'required',
         ]);
 
         $user = User::make([
