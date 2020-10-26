@@ -47,7 +47,7 @@ class UsersController extends Controller
             'password' => 'required|between:8,255|confirmed',
             'password_confirmation' => 'required',
         ]);
-
+        
         $user = User::make([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -70,7 +70,7 @@ class UsersController extends Controller
     {
         return view('admin.users.show', compact(['user']));
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,7 +81,7 @@ class UsersController extends Controller
     {
         return view('admin.users.edit', compact(['user']));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *
@@ -91,12 +91,18 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = $request->validate([
+            'first_name' => 'required|string|max:191',
+            'last_name' => 'required|string|max:191',
+            'email' => 'required|email|max:191',
+            'password' => 'between:8,255|confirmed',
+        ]);
 
         $user = User::findOrFail($id);
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-
+        
         if (!is_null($request->password)) {
             $user->password = Hash::make($request->password);
         }
