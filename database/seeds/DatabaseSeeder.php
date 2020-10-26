@@ -14,12 +14,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->truncateTables([
             'superate_centers',
-            'blogs'
         ]);
 
-        // $this->call(UserSeeder::class);
         $this->call(SuperateCenterSeeder::class);
-        $this->call(BlogSeeder::class);
     }
 
     protected function truncateTables(array $tables)

@@ -1,8 +1,8 @@
 @extends('admin.layouts.dashboard')
 
 @section('content')
- <!-- Breadcrumbs-->
- <ol class="breadcrumb">
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
     <li class="breadcrumb-item">
         <a href="#" class="text-success font-weight-bold">{{ Auth::user()->first_name." ".Auth::user()->last_name }}</a>
     </li>
@@ -127,6 +127,7 @@
                                 <a href="{{ route('blog.admin.users.show', $user->id) }}"><i class="fa fa-eye"></i></a>
                                 @if ((auth()->user()->id) == $user->id)
                                 <i class="fa fa-user" style="color: green"></i>
+                                <a href="{{ route('blog.admin.users.edit', $user->id) }}"><i class="fa fa-edit"></i></a>
                                 @elseif (!is_null($user->deleted_at))
                                 <a href="#" data-toggle="modal" data-target="#restoreModal" data-userid="{{ $user->id }}">
                                     <i class="fa fa-trash-restore"></i>
@@ -135,8 +136,8 @@
                                 <a href="#" data-toggle="modal" data-target="#deleteModal" data-userid="{{ $user->id }}">
                                     <i class="fa fa-trash-alt"></i>
                                 </a>
-                                @endif
                                 <a href="{{ route('blog.admin.users.edit', $user->id) }}"><i class="fa fa-edit"></i></a>
+                                @endif
                             </center>
                         </td>
                     </tr>
