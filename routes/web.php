@@ -46,6 +46,7 @@ Route::prefix('blog')->name('blog.')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('dashboard', 'Admin\AdminController@index')->name('dashboard');
         Route::post('users/{user}', 'Admin\UsersController@restore')->name('users.restore');
+        Route::post('roles/{role}', 'Admin\RolesController@restore')->name('roles.restore');
         Route::resource('users', 'Admin\UsersController');
         Route::resource('roles', 'Admin\RolesController');
     });

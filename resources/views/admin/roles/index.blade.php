@@ -104,16 +104,15 @@
                         <td>
                             <center>
                                 <a href="{{ route('blog.admin.roles.show', $role->id) }}"><i class="fa fa-eye"></i></a>
-                                <a href="{{ route('blog.admin.users.edit', $role->id) }}"><i class="fa fa-edit"></i></a>
                                 @if (!is_null($role->deleted_at))
-                                <a href="#" data-toggle="modal" data-target="#restoreModal" data-userid="{{ $role->id }}">
+                                <a href="#" data-toggle="modal" data-target="#restoreModal" data-roleid="{{ $role->id }}">
                                     <i class="fa fa-trash-restore"></i>
                                 </a>
                                 @else
-                                <a href="#" data-toggle="modal" data-target="#deleteModal" data-userid="{{ $role->id }}">
+                                <a href="#" data-toggle="modal" data-target="#deleteModal" data-roleid="{{ $role->id }}">
                                     <i class="fa fa-trash-alt"></i>
                                 </a>
-                                <a href="{{ route('blog.admin.users.edit', $role->id) }}"><i class="fa fa-edit"></i></a>
+                                <a href="{{ route('blog.admin.roles.edit', $role->id) }}"><i class="fa fa-edit"></i></a>
                                 @endif
                             </center>
                         </td>
@@ -124,20 +123,20 @@
             </table>
         </div>
     </div>
-    @if (!count($users) == 0)
+    {{-- @if (!count($roles) == 0)
     <div class="card-footer text-primary font-weight-bold">Role registrado recientemente:
         {{ $lastUser->first_name . " " . $lastUser->last_name . " | " . $lastUser->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
     </div>
-    @endif
+    @endif --}}
 </div>
 
-@if (!count($users) == 0)
+@if (!count($roles) == 0)
 <!-- delete Modal-->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres eliminar a este usuario?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres eliminar este role?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -145,10 +144,10 @@
             <div class="modal-body">Click en "Borrar" si realmente quieres eliminarlo</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <form method="POST" action="{{ route('blog.admin.users.destroy', $user->id) }}">
+                <form method="POST" action="{{ route('blog.admin.roles.destroy', $role->id) }}">
                     @method('DELETE')
                     @csrf
-                    <input type="hidden" id="user_id" name="user_id" value="">
+                    <input type="hidden" id="role_id" name="role_id" value="">
                     <a class="btn btn-danger text-light font-weight-bold" onclick="$(this).closest('form').submit();">Borrar</a>
                 </form>
             </div>
@@ -160,7 +159,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres restaurar este usuario?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro que quieres restaurar este role?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -168,9 +167,9 @@
             <div class="modal-body">Click en "Restaurar" si realmente quieres eliminarlo</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                <form method="POST" action="{{ route('blog.admin.users.restore', $user->id) }}">
+                <form method="POST" action="{{ route('blog.admin.roles.restore', $role->id) }}">
                     @csrf
-                    <input type="hidden" id="user_id" name="user_id" value="">
+                    <input type="hidden" id="role_id" name="role_id" value="">
                     <a class="btn btn-success text-light font-weight-bold" onclick="$(this).closest('form').submit();">Restaurar</a>
                 </form>
             </div>
@@ -181,21 +180,21 @@
 
 @endsection
 
-@section('js_user_view')
+@section('js_role_view')
 <script>
     $('#deleteModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
-            var user_id = button.data('userid') 
+            var role_id = button.data('roleid') 
             
             var modal = $(this)
-            modal.find('.modal-footer #user_id').val(user_id);
+            modal.find('.modal-footer #role_id').val(role_id);
         });
     $('#restoreModal').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) 
-            var user_id = button.data('userid') 
+            var role_id = button.data('roleid') 
             
             var modal = $(this)
-            modal.find('.modal-footer #user_id').val(user_id);
+            modal.find('.modal-footer #role_id').val(role_id);
         });
 </script>
 @endsection

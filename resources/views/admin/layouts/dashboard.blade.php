@@ -182,6 +182,7 @@
     <script src={{ asset('js/admin/demo/chart-area-demo.js') }}></script>
     @yield('js_blog_page')
     @yield('js_user_view')
+    @yield('js_role_view')
 </body>
 
 </html>

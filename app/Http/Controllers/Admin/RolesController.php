@@ -44,12 +44,12 @@ class RolesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Role  $role
+     * @param  \App\Role
      * @return \Illuminate\Http\Response
      */
     public function show(Role $role)
     {
-        //
+        return view('admin.roles.show', compact('role'));
     }
 
     /**
@@ -84,5 +84,13 @@ class RolesController extends Controller
     public function destroy(Role $role)
     {
         //
+    }
+
+    public function restore(Request $request)
+    {
+        Role::withTrashed()->find($request->role_id)->restore();
+
+        $request->session()->flash('role_restored', true);
+        return redirect()->route('blog.admin.roles.index');
     }
 }
