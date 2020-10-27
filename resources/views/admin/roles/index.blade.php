@@ -103,12 +103,12 @@
                         </td>
                         <td>
                             <center>
-                                <a href="{{ route('blog.admin.roles.show', $role->id) }}"><i class="fa fa-eye"></i></a>
                                 @if (!is_null($role->deleted_at))
                                 <a href="#" data-toggle="modal" data-target="#restoreModal" data-roleid="{{ $role->id }}">
                                     <i class="fa fa-trash-restore"></i>
                                 </a>
                                 @else
+                                <a href="{{ route('blog.admin.roles.show', $role->id) }}"><i class="fa fa-eye"></i></a>
                                 <a href="#" data-toggle="modal" data-target="#deleteModal" data-roleid="{{ $role->id }}">
                                     <i class="fa fa-trash-alt"></i>
                                 </a>

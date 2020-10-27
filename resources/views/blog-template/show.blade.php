@@ -4,7 +4,9 @@
 
 <!-- Page Header -->
 <header class="masthead"
-    style="border-bottom: 8px solid #00b6d8; background-image: url('{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}');">
+    style="border-bottom: 8px solid #00b6d8; 
+    background-image: url('{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}');
+    background-attachment: fixed;">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -13,7 +15,7 @@
                     <h1 style="text-shadow: 1px 1px 1px black;">{{ $blog->title }}</h1>
                     <h2 class="subheading" style="text-shadow: 1px 1px 1px black;">By
                         {{ $blog->user->first_name . " " . $blog->user->last_name }}</h2>
-                    <span class="meta">{{ $blog->created_at }}</span>
+                    <span class="meta">{{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}</span>
                 </div>
             </div>
         </div>
@@ -27,6 +29,7 @@
             <p>{!! $blog->content !!}</p>
         </div>
     </div>
+    <a href="{{ url()->previous() }}" class="btn btn-primary rounded">Regresar</a>
 </div>
 
 <hr>

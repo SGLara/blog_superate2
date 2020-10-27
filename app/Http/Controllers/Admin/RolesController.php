@@ -15,7 +15,7 @@ class RolesController extends Controller
      */
     public function index()
     {
-        $roles = Role::orderBy('id', 'desc')->get();
+        $roles = Role::withTrashed()->get();
 
         return view('admin.roles.index', compact(['roles']));
     }
@@ -27,7 +27,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.roles.create');
     }
 
     /**
@@ -60,7 +60,7 @@ class RolesController extends Controller
      */
     public function edit(Role $role)
     {
-        //
+        return view('admin.roles.edit', compact(['role']));
     }
 
     /**
@@ -72,7 +72,13 @@ class RolesController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        //
+        $role->name = $request->role_name;
+        $role->slug = $request->role_slug;
+
+        $role->save();
+
+        $request->session()->flash('role_updated', true);
+        return redirect()->route('blog.admin.roles.index');
     }
 
     /**
@@ -81,9 +87,12 @@ class RolesController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Role $role)
+    public function destroy(Request $request)
     {
-        //
+        $role = Role::destroy($request->role_id);
+
+        $request->session()->flash('role_deleted', true);
+        return redirect()->route('blog.admin.roles.index');
     }
 
     public function restore(Request $request)
