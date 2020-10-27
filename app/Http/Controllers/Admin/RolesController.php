@@ -38,7 +38,18 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'role_name' => 'required|max:255',
+            'role_slug' => 'required|max:255',
+        ]);
+
+        $role = Role::create([
+            'name' => $request->role_name,
+            'slug' => $request->role_slug,
+        ]);
+
+        $request->session()->flash('role_stored', true);
+        return redirect()->route('blog.admin.roles.index');
     }
 
     /**
