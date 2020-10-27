@@ -59,7 +59,7 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
-                        <th>Role</th>
+                        <th>Roles</th>
                         <th>Permisos</th>
                         <th>Administrador</th>
                         <th>Herramientas</th>
@@ -71,7 +71,7 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
-                        <th>Role</th>
+                        <th>Roles</th>
                         <th>Permisos</th>
                         <th>Administrador</th>
                         <th>Herramientas</th>

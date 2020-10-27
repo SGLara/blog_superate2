@@ -68,6 +68,14 @@
     <div id="wrapper">
         <!-- Sidebar -->
         <ul class="sidebar navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('blog') }}">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Blog Principal</span>
+                </a>
+            </li>
+            
+            {{-- Users view --}}
             @if (Auth::user()->is_admin)
             <li class="nav-item {{ setActive('blog.admin.dashboard') }}">
                 <a class="nav-link" href="{{ route('blog.admin.dashboard') }}">
@@ -75,14 +83,18 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            @endif
-
-            <li class="nav-item dropdown">
-                <a class="nav-link" href="{{ route('blog') }}">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>Blog Principal</span>
+            <li class="nav-item {{ setActive('blog.blogs.index') }}">
+                <a class="nav-link" href="{{ route('blog.admin.roles.index') }}">
+                    <i class="fas fa-fw fa-unlock-alt"></i>
+                    <span>Roles</span>
                 </a>
             </li>
+            <li class="nav-item {{ setActive('blog.admin.users.index') }}">
+                <a class="nav-link" href="{{ route('blog.admin.users.index') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Usuarios</span></a>
+            </li>
+            @endif
 
             <li class="nav-item {{ setActive('blog.blogs.index') }}">
                 <a class="nav-link" href="{{ route('blog.blogs.index') }}">
@@ -90,15 +102,6 @@
                     <span>Blogs</span>
                 </a>
             </li>
-
-            {{-- Users view --}}
-            @if (Auth::user()->is_admin)
-            <li class="nav-item {{ setActive('blog.admin.users.index') }}">
-                <a class="nav-link" href="{{ route('blog.admin.users.index') }}">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Usuarios</span></a>
-            </li>
-            @endif
         </ul>
 
         <div id="content-wrapper">
