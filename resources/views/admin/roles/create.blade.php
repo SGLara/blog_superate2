@@ -17,8 +17,7 @@
             <h1 class="font-weight-bold">Crear Role</h1>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('blog.admin.roles.store', $role->id) }}" enctype="multipart/form-data">
-                @method('PUT')
+            <form method="POST" action="{{ route('blog.admin.roles.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -27,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="role_slug">Slug del Role</label>
-                    <input type="text" name="role_slug" class="form-control" id="role_slug" placeholder="Slug..." value="{{ old('role_slug') }}" disabled autocomplete="off">
+                    <input type="text" name="role_slug" class="form-control" id="role_slug" placeholder="Slug..." value="{{ old('role_slug') }}" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="role_permission">Agregar Permisos</label>
