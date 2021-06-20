@@ -51,4 +51,4 @@ Route::prefix('blog')->name('blog.')->group(function () {
     });
 });
 
-// Auth::routes();
+Auth::routes();
