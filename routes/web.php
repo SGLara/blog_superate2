@@ -7,7 +7,10 @@ Route::redirect('/', 'inicio');
 Route::get('inicio', 'NavbarController@homeView')->name('inicio');
 Route::get('nuestros-aliados', 'NavbarController@ourAlliesView')->name('nuestros-aliados');
 Route::get('contactanos', 'NavbarController@contactUsView')->name('contactanos');
-Route::get('blog', [HomeController::class, 'index'])->name('blog'); //TUPLE SINTAX
+Route::get('blog', function (){
+    return view('landing.comingsoon_04.index');
+})->name('blog');
+// Route::get('blog', [HomeController::class, 'index'])->name('blog'); //TUPLE SINTAX
 
 Route::group(['prefix' => 'quienes-somos'], function () {
     Route::get('nuestra-historia', 'NavbarController@ourHistoryView')->name('nuestra-historia');
