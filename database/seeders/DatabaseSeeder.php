@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->truncateTables([
-        //     'superate_centers',
-        // ]);
+        $this->truncateTables([
+            'superate_centers',
+        ]);
 
         $this->call(SuperateCenterSeeder::class);
     }
