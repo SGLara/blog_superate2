@@ -1,12 +1,22 @@
 <?php
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
+namespace Database\Factories;
 
-use App\Magazine;
-use Faker\Generator as Faker;
+use Faker\Factory as Faker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
-$factory->define(Magazine::class, function (Faker $faker) {
-    return [
-        'title' => $faker->sentence(6)
-    ];
-});
+class MagazineFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        $faker = Faker::create();
+        return [
+            'title' => $faker->sentence(6)
+        ];
+    }
+}

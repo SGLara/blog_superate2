@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
                 $table->id();
                 $table->string('first_name', 25)->index();
                 $table->string('last_name', 25)->index();
-                $table->string('email', 30)->unique();
+                $table->string('email')->unique();
                 $table->timestamp('email_verified_at')->nullable();
                 $table->string('password');
                 $table->boolean('is_admin')->default(0);

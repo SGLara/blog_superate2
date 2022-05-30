@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Magazine;
+use App\Models\Magazine;
 
 class MagazineSeeder extends Seeder
 {
@@ -12,6 +12,6 @@ class MagazineSeeder extends Seeder
      */
     public function run()
     {
-        factory(Magazine::class, 10)->create();
+        Magazine::factory(10)->create();
     }
 }

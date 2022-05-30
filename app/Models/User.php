@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -55,7 +55,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-     /**
+    /**
      * Set the user's first name.
      *
      * @param  string  $value
@@ -66,7 +66,7 @@ class User extends Authenticatable
         $this->attributes['first_name'] = ucwords(strtolower($value));
     }
 
-     /**
+    /**
      * Set the user's first name.
      *
      * @param  string  $value
@@ -77,7 +77,7 @@ class User extends Authenticatable
         $this->attributes['last_name'] = ucwords(strtolower($value));
     }
 
-     /**
+    /**
      * Set the user's first name.
      *
      * @param  string  $value

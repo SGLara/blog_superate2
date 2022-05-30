@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -47,7 +47,7 @@ class UsersController extends Controller
             'password' => 'required|between:8,255|confirmed',
             'password_confirmation' => 'required',
         ]);
-        
+
         $user = User::make([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
@@ -70,7 +70,7 @@ class UsersController extends Controller
     {
         return view('admin.users.show', compact(['user']));
     }
-    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -81,7 +81,7 @@ class UsersController extends Controller
     {
         return view('admin.users.edit', compact(['user']));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *
@@ -102,7 +102,7 @@ class UsersController extends Controller
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
         $user->email = $request->email;
-        
+
         if (!is_null($request->password)) {
             $user->password = Hash::make($request->password);
         }

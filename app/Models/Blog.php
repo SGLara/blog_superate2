@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
@@ -11,7 +11,8 @@ class Blog extends Model
 
     protected $guarded = ['id'];
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class, 'created_by');
     }
 }
