@@ -24,7 +24,6 @@ class User extends Authenticatable
         'birthdate',
         'phone',
         'gender',
-        'is_admin',
     ];
 
     public function superateCenter()
