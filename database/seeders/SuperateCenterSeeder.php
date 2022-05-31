@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\SuperateCenter;
+use App\Models\SuperateCenter;
 use Illuminate\Support\Facades\DB;
 
 class SuperateCenterSeeder extends Seeder

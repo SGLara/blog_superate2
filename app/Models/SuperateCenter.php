@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 
@@ -9,7 +9,8 @@ class SuperateCenter extends Model
     // use SoftDeletes;
     protected $guarded = ['id', 'name'];
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 }
