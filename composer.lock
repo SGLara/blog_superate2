@@ -123,19 +123,6 @@
             "time": "2021-08-15T20:50:18+00:00"
         },
         {
-<<<<<<< HEAD
-            "name": "composer/package-versions-deprecated",
-            "version": "1.11.99.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/package-versions-deprecated.git",
-                "reference": "b174585d1fe49ceed21928a945138948cb394600"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/package-versions-deprecated/zipball/b174585d1fe49ceed21928a945138948cb394600",
-                "reference": "b174585d1fe49ceed21928a945138948cb394600",
-=======
             "name": "dflydev/dot-access-data",
             "version": "v3.0.1",
             "source": {
@@ -147,7 +134,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/0992cc19268b259a39e86f296da5f0677841f42c",
                 "reference": "0992cc19268b259a39e86f296da5f0677841f42c",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -182,25 +168,9 @@
                     "homepage": "http://dflydev.com"
                 },
                 {
-<<<<<<< HEAD
-                    "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be"
-                }
-            ],
-            "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "support": {
-                "issues": "https://github.com/composer/package-versions-deprecated/issues",
-                "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.4"
-            },
-            "funding": [
-                {
-                    "url": "https://packagist.com",
-                    "type": "custom"
-=======
                     "name": "Beau Simensen",
                     "email": "beau@dflydev.com",
                     "homepage": "http://beausimensen.com"
->>>>>>> develop
                 },
                 {
                     "name": "Carlos Frutos",
@@ -213,22 +183,6 @@
                     "homepage": "https://www.colinodell.com"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2021-09-13T08:41:34+00:00"
-        },
-        {
-            "name": "doctrine/cache",
-            "version": "2.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/cache.git",
-                "reference": "331b4d5dbaeab3827976273e9356b3b453c300ce"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/331b4d5dbaeab3827976273e9356b3b453c300ce",
-                "reference": "331b4d5dbaeab3827976273e9356b3b453c300ce",
-=======
             "description": "Given a deep data structure, access data by dot notation.",
             "homepage": "https://github.com/dflydev/dflydev-dot-access-data",
             "keywords": [
@@ -255,7 +209,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/cache/zipball/1ca8f21980e770095a31456042471a57bc4c68fb",
                 "reference": "1ca8f21980e770095a31456042471a57bc4c68fb",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -266,24 +219,11 @@
             },
             "require-dev": {
                 "cache/integration-tests": "dev-master",
-<<<<<<< HEAD
-                "doctrine/coding-standard": "^8.0",
-                "mongodb/mongodb": "^1.1",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
-                "predis/predis": "~1.0",
-                "psr/cache": "^1.0 || ^2.0 || ^3.0",
-                "symfony/cache": "^4.4 || ^5.2 || ^6.0@dev",
-                "symfony/var-exporter": "^4.4 || ^5.2 || ^6.0@dev"
-            },
-            "suggest": {
-                "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
-=======
                 "doctrine/coding-standard": "^9",
                 "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
                 "psr/cache": "^1.0 || ^2.0 || ^3.0",
                 "symfony/cache": "^4.4 || ^5.4 || ^6",
                 "symfony/var-exporter": "^4.4 || ^5.4 || ^6"
->>>>>>> develop
             },
             "type": "library",
             "autoload": {
@@ -332,11 +272,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-<<<<<<< HEAD
-                "source": "https://github.com/doctrine/cache/tree/2.1.1"
-=======
                 "source": "https://github.com/doctrine/cache/tree/2.2.0"
->>>>>>> develop
             },
             "funding": [
                 {
@@ -352,22 +288,6 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2021-07-17T14:49:29+00:00"
-        },
-        {
-            "name": "doctrine/dbal",
-            "version": "3.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/dbal.git",
-                "reference": "821b4f01a36ce63ed36c090ea74767b72db367e9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/821b4f01a36ce63ed36c090ea74767b72db367e9",
-                "reference": "821b4f01a36ce63ed36c090ea74767b72db367e9",
-=======
             "time": "2022-05-20T20:07:39+00:00"
         },
         {
@@ -382,7 +302,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/dbal/zipball/9e7f76dd1cde81c62574fdffa5a9c655c847ad21",
                 "reference": "9e7f76dd1cde81c62574fdffa5a9c655c847ad21",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -396,17 +315,6 @@
             },
             "require-dev": {
                 "doctrine/coding-standard": "9.0.0",
-<<<<<<< HEAD
-                "jetbrains/phpstorm-stubs": "2021.1",
-                "phpstan/phpstan": "1.1.1",
-                "phpstan/phpstan-strict-rules": "^1",
-                "phpunit/phpunit": "9.5.10",
-                "psalm/plugin-phpunit": "0.16.1",
-                "squizlabs/php_codesniffer": "3.6.1",
-                "symfony/cache": "^5.2|^6.0",
-                "symfony/console": "^2.0.5|^3.0|^4.0|^5.0|^6.0",
-                "vimeo/psalm": "4.12.0"
-=======
                 "jetbrains/phpstorm-stubs": "2022.1",
                 "phpstan/phpstan": "1.6.3",
                 "phpstan/phpstan-strict-rules": "^1.2",
@@ -416,7 +324,6 @@
                 "symfony/cache": "^5.2|^6.0",
                 "symfony/console": "^2.7|^3.0|^4.0|^5.0|^6.0",
                 "vimeo/psalm": "4.23.0"
->>>>>>> develop
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -476,11 +383,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-<<<<<<< HEAD
-                "source": "https://github.com/doctrine/dbal/tree/3.1.4"
-=======
                 "source": "https://github.com/doctrine/dbal/tree/3.3.6"
->>>>>>> develop
             },
             "funding": [
                 {
@@ -496,11 +399,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2021-11-15T16:44:33+00:00"
-=======
             "time": "2022-05-02T17:21:01+00:00"
->>>>>>> develop
         },
         {
             "name": "doctrine/deprecations",
@@ -3706,18 +3605,6 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-<<<<<<< HEAD
-            "version": "v2.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-=======
             "version": "v3.1.0",
             "source": {
                 "type": "git",
@@ -3728,7 +3615,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
                 "reference": "07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
->>>>>>> develop
                 "shasum": ""
             },
             "require": {
@@ -3737,11 +3623,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-main": "2.5-dev"
-=======
                     "dev-main": "3.1-dev"
->>>>>>> develop
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -3770,11 +3652,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.1"
-=======
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v3.1.0"
->>>>>>> develop
             },
             "funding": [
                 {
@@ -3790,11 +3668,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2022-01-02T09:53:40+00:00"
-=======
             "time": "2022-02-25T11:15:52+00:00"
->>>>>>> develop
         },
         {
             "name": "symfony/error-handler",
@@ -8479,9 +8353,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-<<<<<<< HEAD
-    "plugin-api-version": "2.3.0"
-=======
     "plugin-api-version": "2.2.0"
->>>>>>> develop
 }
