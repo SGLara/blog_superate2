@@ -45,14 +45,15 @@ class GenerateAdmin extends Command
         $email = $this->ask("May I have the admin's email?");
         $password = $this->ask("May I have the admin's password");
 
-        $admin = User::create([
+        $admin = User::make([
             'first_name' => $first_name,
             'last_name' => $last_name,
             'email' => $email,
-            'password' => Hash::make($password),
-            'is_admin' => 1
         ]);
-
+        
+        $admin->password = Hash::make($password);
+        $admin->is_admin = 1;
+        $admin->save();
         $admin->markEmailAsVerified();
 
         $this->info('Admin generated successfully!');
