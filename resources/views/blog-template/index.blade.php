@@ -27,39 +27,45 @@
 
       @if (count($blogs) == 0)
 
-        <h1 class="mx-auto mb-5">Ooops! No hay blogs publicados, vuelve pronto...</h1>
+      <h1 class="mx-auto mb-5">Ooops! No hay blogs publicados, vuelve pronto...</h1>
 
       @else
 
-        @foreach ($blogs as $blog)
-          <div class="col-md-4">
-            <img class="img-thumbnail mt-4" width="100%" src="{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}"
-              alt="blog_image">
-          </div>
-          <div class="col-lg-8">
-            <div class="post-preview">
-              <a href="{{ route('blog.show', $blog->id) }}">
-                <h2 class="post-title">
-                  {{ $blog->title }}
-                </h2>
-                {{-- <h3 class="post-subtitle">
-                  {{ getShorterString($blog->content, 100) }}
-                </h3> --}}
-              </a>
-              <p class="post-meta">Publicado por
-                <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a> el 
-                {{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
-              </p>
-            </div>
-          </div>
-          <hr>
+      @foreach ($blogs as $blog)
+      <div class="col-md-4">
+        <img class="img-thumbnail mt-4" width="100%"
+         @if (is_null($blog->image_url))
+            src='https://picsum.photos/300'
+         @endif
+          src="{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}"
+          alt="blog_image"
+          loading='lazy'
+        >
+      </div>
+      <div class="col-lg-8">
+        <div class="post-preview">
+          <a href="{{ route('blog.show', $blog->id) }}">
+            <h2 class="post-title">
+              {{ $blog->title }}
+            </h2>
+            {{-- <h3 class="post-subtitle">
+              {{ getShorterString($blog->content, 100) }}
+            </h3> --}}
+          </a>
+          <p class="post-meta">Publicado por
+            <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a> el
+            {{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
+          </p>
+        </div>
+      </div>
+      <hr>
 
 
-          @endforeach
-          <!-- Pager -->
-          <div class="clearfix mt-5">
-            {{ $blogs->links() }}
-          </div>
+      @endforeach
+      <!-- Pager -->
+      <div class="clearfix mt-5">
+        {{ $blogs->links() }}
+      </div>
       @endif
 
 

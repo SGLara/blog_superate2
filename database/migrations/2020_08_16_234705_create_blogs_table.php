@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
                 $table->id();
                 $table->string('title', 191)->index()->unique();
                 $table->text('content');
-                $table->string('image_url');
+                $table->string('image_url')->nullable();
                 $table->unsignedBigInteger('created_by')->index();
                 $table->timestamps();
             }
