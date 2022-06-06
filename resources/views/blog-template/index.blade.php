@@ -35,7 +35,7 @@
       <div class="col-md-4">
         <img class="img-thumbnail mt-4" width="100%"
          @if (is_null($blog->image_url))
-            src='https://picsum.photos/300'
+            src='https://picsum.photos/300?random={{ rand(1,50) }}'
          @endif
           src="{{ asset('/storage/img/blogs_images/' . $blog->image_url) }}"
           alt="blog_image"
@@ -48,13 +48,13 @@
             <h2 class="post-title">
               {{ $blog->title }}
             </h2>
-            {{-- <h3 class="post-subtitle">
+            <h3 class="post-subtitle">
               {{ getShorterString($blog->content, 100) }}
-            </h3> --}}
+            </h3>
           </a>
           <p class="post-meta">Publicado por
             <a href="#">{{ $blog->user->first_name." ".$blog->user->last_name }}</a> el
-            {{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M:%S %p') }}
+            {{ $blog->created_at->formatLocalized('%d de %B de %Y %I:%M %p') }}
           </p>
         </div>
       </div>

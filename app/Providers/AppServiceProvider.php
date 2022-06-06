@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -35,5 +36,6 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         setlocale(LC_TIME, 'es_ES'); //to help you make dates in spanish language by default
         Carbon::setLocale(config('app.locale'));
+        Paginator::useBootstrap();
     }
 }
