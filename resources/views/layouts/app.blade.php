@@ -149,14 +149,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src={{ asset('resources/THEMES/blog-template0/vendor/jquery/jquery.min.js') }}></script>
-  <script src={{ asset('resources/THEMES/blog-template0/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
-
-  <!-- Custom scripts for this template -->
-  <script src={{ asset('resources/THEMES/blog-template0/js/clean-blog.min.js') }}></script>
-
 </body>
 
 </html>
