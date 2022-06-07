@@ -1,12 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap);
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Open Sans";
-  margin: 0; }
+  margin: 0;
+}
 
 .contact_us {
   display: grid;
@@ -19,43 +21,49 @@ body {
   margin: 150px auto;
   padding: 50px;
   border: 5px solid #00b6d8;
-  border-radius: 2px 50px 2px 50px; }
+  border-radius: 2px 50px 2px 50px;
+}
 
 h1 {
   grid-area: title;
   display: flex;
   color: #00b6d8;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  align-items: center; }
+  align-items: center;
+}
 
 .form {
-  grid-area: form; }
+  grid-area: form;
+}
 
 .google_maps {
   grid-area: google;
-  margin-left: 15px; }
+  margin-left: 15px;
+}
 
-input[type="text"],
-input[type="email"],
+input[type=text],
+input[type=email],
 textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 12px 0;
   box-sizing: border-box;
-  border: 2px solid #eceaea;
-  -webkit-transition: 0.5s;
+  border: 2px solid rgb(236, 234, 234);
   transition: 0.5s;
   outline: none;
-  border-radius: 20px; }
+  border-radius: 20px;
+}
 
-input[type="text"]:focus,
-input[type="email"]:focus,
+input[type=text]:focus,
+input[type=email]:focus,
 textarea:focus {
-  border: 2px solid #555; }
+  border: 2px solid #555;
+}
 
 label {
   margin-left: 5px;
-  margin-top: 5px; }
+  margin-top: 5px;
+}
 
 button {
   background-color: #00c800;
@@ -67,17 +75,18 @@ button {
   margin: 8px 0;
   border: none;
   border-radius: 8px;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .info {
   grid-area: info;
   padding: 30px;
   text-align: justify;
   border: 3px solid #00c800;
-  border-radius: 30px; }
+  border-radius: 30px;
+}
 
 p {
   color: gray;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
-
-/*# sourceMappingURL=contactanos.css.map */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

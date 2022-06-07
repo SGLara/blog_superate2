@@ -1,2 +1,215 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");*{margin:0;padding:0;box-sizing:border-box}body{display:inline}.header{position:fixed;width:100%;background-color:white;border-bottom:8px solid #00c800;z-index:1}.superate_logo{float:left;margin:10px 0 0 50px;width:210px}main{width:100%;max-width:10000px}footer div a>img{width:40px;margin:10px}footer{padding:25px;text-align:center;color:gray;font-family:Arial, Helvetica, sans-serif}footer>div{border-top:1px solid #00b6d8}footer>h5{padding-top:10px;border-top:1px solid #00b6d8}
-/*# sourceMappingURL=style.css.map */
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: inline;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  border-bottom: 8px solid #00c800;
+  z-index: 1;
+}
+
+.superate_logo {
+  width: 210px;
+}
+
+main {
+  width: 100%;
+  max-width: 10000px;
+}
+
+footer div a > img {
+  width: 40px;
+  margin: 10px;
+}
+
+footer {
+  padding: 25px;
+  text-align: center;
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer > div {
+  border-top: 1px solid #00b6d8;
+}
+
+footer > h5 {
+  padding-top: 10px;
+  border-top: 1px solid #00b6d8;
+}
+
+.slideshow {
+  grid-area: slideshow;
+}
+
+.title {
+  grid-area: title;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #01b2de;
+}
+
+.content {
+  grid-area: content1;
+  color: gray;
+  border: 3px solid #01b2de;
+  border-radius: 30px 5px 30px 5px;
+  padding: 30px;
+  text-align: justify;
+}
+
+.content > img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+
+.numbers {
+  grid-area: number;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.content a > img {
+  width: 20px;
+  margin: 3px;
+}
+
+table tr td {
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container span,
+.slideshow-container h4,
+.slideshow-container h2 {
+  text-shadow: 2px 2px 2px black;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  max-height: 600px;
+  margin: auto;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 200, 0, 0.4666666667);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  padding: 8px 20px;
+  position: absolute;
+  left: 20px;
+  bottom: 12px;
+  text-align: justify;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 1%;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.activeDot,
+.dot:hover {
+  background-color: #00c800;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+.next,
+.text {
+    font-size: 11px;
+  }
+}

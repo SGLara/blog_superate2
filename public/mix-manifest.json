@@ -1,12 +1,9 @@
 {
-    "/js/admin/sb-admin.js": "/js/admin/sb-admin.js",
-    "/js/admin/demo/chart-area-demo.js": "/js/admin/demo/chart-area-demo.js",
-    "/js/admin/demo/chart-bar-demo.js": "/js/admin/demo/chart-bar-demo.js",
-    "/js/admin/demo/chart-pie-demo.js": "/js/admin/demo/chart-pie-demo.js",
-    "/js/admin/demo/datatables-demo.js": "/js/admin/demo/datatables-demo.js",
-    "/css/style.css": "/css/style.css",
+    "/css/cs_fam_cdn.css": "/css/cs_fam_cdn.css",
+    "/css/cs_adoc.css": "/css/cs_adoc.css",
     "/css/contactanos.css": "/css/contactanos.css",
     "/css/app.css": "/css/app.css",
+    "/css/style.css": "/css/style.css",
     "/css/nuestros_aliados.css": "/css/nuestros_aliados.css",
     "/css/nuestro_programa.css": "/css/nuestro_programa.css",
     "/css/nuestro_equipo.css": "/css/nuestro_equipo.css",
@@ -24,8 +21,5 @@
     "/css/cs_fpro.css": "/css/cs_fpro.css",
     "/css/cs_fpoma.css": "/css/cs_fpoma.css",
     "/css/cs_fam_sanmiguelito.css": "/css/cs_fam_sanmiguelito.css",
-    "/css/cs_fam_cdn.css": "/css/cs_fam_cdn.css",
-    "/css/cs_adoc.css": "/css/cs_adoc.css",
-    "/css/blog-template/clean-blog.css": "/css/blog-template/clean-blog.css",
-    "/css/admin/sb-admin.css": "/css/admin/sb-admin.css"
+    "/css/blog-template/clean-blog.css": "/css/blog-template/clean-blog.css"
 }

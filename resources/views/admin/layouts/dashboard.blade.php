@@ -54,7 +54,8 @@
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto mr-0">
             <li class="nav-item dropdown no-arrow">
-                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle fa-fw"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
@@ -74,7 +75,7 @@
                     <span>Blog Principal</span>
                 </a>
             </li>
-            
+
             {{-- Users view --}}
             @if (Auth::user()->is_admin)
             <li class="nav-item {{ setActive('blog.admin.dashboard') }}">
@@ -119,7 +120,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>¡Supérate! Blog by Steven Lara 2020</span>
+                        <span>¡Supérate! Blog by Steven Lara {{ date('Y')}}</span>
                     </div>
                 </div>
             </footer>
@@ -136,7 +137,8 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
