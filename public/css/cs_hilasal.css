@@ -1,20 +1,2 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap);
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Open Sans";
-  margin: 0;
-}
-
-.hilasal {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto);
-  grid-template-areas: "slideshow slideshow slideshow" "title title title" "content1 content1 number";
-  max-width: 1300px;
-  width: 90%;
-  margin: 130px auto;
-}
+*{box-sizing:border-box}body{font-family:Open Sans;margin:0}.hilasal{grid-gap:20px;display:grid;grid-template-areas:"slideshow slideshow slideshow" "title title title" "content1 content1 number";grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,auto);margin:130px auto;max-width:1300px;width:90%}
