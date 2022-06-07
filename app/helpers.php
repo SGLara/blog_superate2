@@ -2,7 +2,9 @@
 
 function setActive($routeName)
 {
-    return request()->routeIs($routeName) ? 'active' : '';
+    return (request()->routeIs($routeName) && !request()->routeIs('inicio'))
+        ? 'active'
+        : '';
 }
 
 if (!function_exists('getShorterString')) {
@@ -22,9 +24,10 @@ if (!function_exists('getShorterString')) {
         }
     }
 
-    function cleanSpecialCharacters($string){
+    function cleanSpecialCharacters($string)
+    {
         $string = htmlentities($string);
         $string = preg_replace('/\&(.)[^;]*;/', '\\1', $string);
         return $string;
-       }
+    }
 }

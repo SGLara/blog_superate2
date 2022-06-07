@@ -28,15 +28,15 @@ body {
   width: 50px;
   height: 50px;
   text-align: center;
-  color: $white;
-  background: fade-out($gray-800, .5);
+  color: white;
+  background: fade-out(rgb(31 41 55), .5);
   line-height: 46px;
   &:focus,
   &:hover {
     color: white;
   }
   &:hover {
-    background: $gray-800;
+    background: rgb(31 41 55);
   }
   i {
     font-weight: 800;

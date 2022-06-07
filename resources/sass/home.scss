@@ -49,6 +49,14 @@ img {
     transition: all 0.2s ease-in-out;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -ms-border-radius: 0 3px 3px 0;
+    -o-border-radius: 0 3px 3px 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 /* Position the "next button" to the right */
@@ -61,6 +69,8 @@ img {
 .prev:hover,
 .next:hover {
     background-color: #00c80077;
+    text-decoration: none;
+    color: white;
 }
 
 /* Caption text */
@@ -98,21 +108,16 @@ img {
     background-color: #00c800;
 }
 
+.logos {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    border: 1px dotted gray;
+}
+
 /* Fading animation */
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
     animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes fade {
@@ -131,12 +136,4 @@ img {
     .text {
         font-size: 11px;
     }
-}
-//--------------------------------------------------------------
-
-//logos
-.logos {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    border: 1px dotted gray;
 }

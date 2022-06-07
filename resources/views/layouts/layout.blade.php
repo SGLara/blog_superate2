@@ -38,7 +38,7 @@
                 src="{{ asset('img/index/social_icons/youtube.svg') }}" alt="youtube_logo" loading="lazy"
                 {{-- onmouseover="setHoverYoutube()" onmouseout="setOriginalYoutube()"--}}></a>
     </div>
-    <h5>Copyright &copy; {{ date('Y')}} ¡Supérate!</h5>
+    <h5>¡Supérate! Blog {{ date('Y')}} <br> by <i>Steven Lara</i></h5>
 </footer>
 @yield('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>

@@ -46,6 +46,7 @@
 
 .boy-image {
     grid-area: img2;
+    overflow: hidden;
 }
 
 .requirements {
@@ -71,18 +72,12 @@
 }
 
 span > a {
-    padding: 5px;
-    background-color: #00b6d8;
+    font-weight: bold;
     color: white;
-    font-weight: bolder;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 3px 0 #007488;
-    border: 5px solid #00b6d8;
-    margin: 5px;
-}
-
-span > a:hover {
-    border-top: 3px solid #00b6d8;
-    box-shadow: 0 2px 0 #007488;
+    &:hover {
+        color: #00b6d8;
+        background-color: white;
+        font-weight: bold;
+        text-decoration: none;
+    }
 }

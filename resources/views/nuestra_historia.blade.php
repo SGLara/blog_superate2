@@ -56,26 +56,45 @@
         <h1>Conoce a Sus Fundadores</h1>
     </div>
     <div class="founder1">
-        <h2><img src="{{ asset('img/who-we-are/our-history/ricardo.jpg') }}" alt="founder1">Ricardo Sagrera Bogle</h2><br><br>
-        <p>Ricardo Sagrera ha formado parte de diferentes gremiales de la empresa privada y múltiples organizaciones sin
-            fines de lucro enfocadas en las áreas de salud y educación. Gracias al interés que ha tenido desde hace
+        <img src="{{ asset('img/who-we-are/our-history/ricardo.jpg') }}" alt="founder1">
+        <h3>Ricardo Sagrera Bogle</h3>
+        <br>
+        <p>
+            Ricardo Sagrera ha formado parte de diferentes gremiales de la empresa privada y múltiples organizaciones
+            sin fines de lucro enfocadas en las áreas de salud y educación. Gracias al interés que ha tenido desde hace
             muchos años en estas áreas, creó junto a su familia la Fundación Sagrera Palomo, la cual se enfocó, desde su
-            nacimiento, en contribuir a la mejora de la educación de nuestro país.</p><br><br>
-        <cite> "Siempre llamo a los
-            jóvenes que inician al Programa a que pongan lo mejor de sí mismos a fin de lograr una superación personal y
-            realizar sus sueños"<br><br>
-            -Ricardo Sagrera</cite>
+            nacimiento, en contribuir a la mejora de la educación de nuestro país
+        </p>
+        <br>
+        <cite>
+            "Siempre llamo a los jóvenes que inician al Programa a que pongan lo
+            mejor de sí mismos a fin de lograr una superación personal y realizar
+            sus sueños"
+            <br>
+            <br>
+            -Ricardo Sagrera
+        </cite>
     </div>
     <div class="founder2">
-        <h2><img src="{{ asset('img/who-we-are/our-history/arturo.jpg') }}" alt="founder2">Arturo X. Sagrera Palomo</h2><br><br>
-        <p>Arturo X. Sagrera, un empresario con notable compromiso social ha liderado diferentes proyectos orientados a
-            promover sana convivencia y brindar oportunidades de superación a niños y niñas, jóvenes y familias en
-            comunidades vulnerables de El Salvador. Actualmente, Arturo es el director general del Programa ¡Supérate!
-            responsable de buscar siempre la sostenibilidad y expansión del Programa.</p><br><br>
-        <cite> “Nuestro lema es
-            transformando vidas vía educación y creemos que si se logra en los jóvenes. El programa les otorga las
-            herramientas para su éxito”<br><br>
-            -Arturo Sagrera</cite>
+        <img src="{{ asset('img/who-we-are/our-history/arturo.jpg') }}" alt="founder2">
+        <h2>Arturo X. Sagrera Palomo</h2>
+        <br>
+        <p>
+            Arturo X. Sagrera, un empresario con notable compromiso social ha liderado
+            diferentes proyectos orientados a promover sana convivencia y brindar oportunidades
+            de superación a niños y niñas, jóvenes y familias en comunidades vulnerables
+            de El Salvador. Actualmente, Arturo es el director general del Programa ¡Supérate!
+            responsable de buscar siempre la sostenibilidad y expansión del Programa.
+        </p>
+        <br>
+        <cite>
+            “Nuestro lema es transformando vidas vía educación y creemos que si
+            se logra en los jóvenes. El programa les otorga las herramientas para
+            su éxito”
+            <br>
+            <br>
+            -Arturo Sagrera
+        </cite>
     </div>
 </div>
 

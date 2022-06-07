@@ -6,9 +6,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-template-areas:
-    "title1   title2"
-    "content1 img1"
-    "img2     img2";
+        "title1   title2"
+        "content1 img1"
+        "img2     img2";
     font-family: "Open Sans";
     max-width: 1300px;
     width: 90%;
@@ -37,7 +37,7 @@
     text-align: justify;
 }
 
-.content > ul{
+.content > ul {
     list-style-position: inside;
 }
 
@@ -48,7 +48,7 @@
     align-items: center;
 }
 
-.img1 > img{
+.img1 > img {
     width: 475px;
     height: 250px;
 }
@@ -60,7 +60,7 @@
     margin-top: 20px;
 }
 
-.img2 > img{
+.img2 > img {
     border: 4px solid #00b6d8;
     padding: 10px;
 }

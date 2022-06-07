@@ -6,10 +6,10 @@
     grid-template-rows: repeat(3, auto);
     grid-gap: 20px;
     grid-template-areas:
-    "title title"
-    "img img"
-    "content1 content1";
-    font-family: 'Open Sans';
+        "title title"
+        "img img"
+        "content1 content1";
+    font-family: "Open Sans";
     max-width: 1300px;
     width: 90%;
     margin: 130px auto;
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.img > img{
+.img > img {
     border: 10px dotted #00c800;
 }
 .content {

@@ -144,7 +144,7 @@
               </a>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; ¡Supérate! Blog 2020 <br> by <i>Steven Lara</i></p>
+          <p class="text-center text-muted">¡Supérate! Blog {{ date('Y')}} <br> by <i>Steven Lara</i></p>
         </div>
       </div>
     </div>

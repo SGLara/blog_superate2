@@ -7,13 +7,13 @@
   .nav-item {
     &.active {
       .nav-link {
-        color: $white;
+        color: white;
       }
     }
     &.dropdown {
       .dropdown-toggle {
         &::after {
-          width: 1rem;
+          width   : 1rem;
           text-align: center;
           float: right;
           vertical-align: 0;
@@ -61,16 +61,16 @@
 
 .sidebar {
   width: $sidebar-collapsed-width !important;
-  background-color: $gray-900;
+  background-color: rgb(17 24 39);
   min-height: calc(100vh - #{$navbar-base-height});
   @include sidebar-icons;
   .nav-item {
     .nav-link {
-      color: fade-out($white, 0.5);
+      color: fade-out(rgb(17 24 39), 0.5);
       &:active,
       &:focus,
       &:hover {
-        color: fade-out($white, 0.25);
+        color: fade-out(rgb(17 24 39), 0.25);
       }
     }
   }
