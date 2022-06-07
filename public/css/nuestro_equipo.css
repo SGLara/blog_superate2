@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 .our-team {
   display: grid;
   grid-gap: 10px;
@@ -8,15 +8,13 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   max-width: 1300px;
   width: 90%;
-  margin: 130px auto;
-}
+  margin: 130px auto; }
 
 .our-team .title {
   grid-area: title1;
   text-align: center;
   background-color: white;
-  color: #00b6d8;
-}
+  color: #00b6d8; }
 
 .our-team .description {
   grid-area: descrip;
@@ -24,15 +22,13 @@
   text-align: center;
   background-color: #00b6d8;
   border-radius: 15px;
-  color: white;
-}
+  color: white; }
 
 .our-team .title2 {
   grid-area: title2;
   text-align: center;
   background-color: white;
-  color: #00b6d8;
-}
+  color: #00b6d8; }
 
 .our-team .description2 {
   grid-area: descrip2;
@@ -40,111 +36,93 @@
   text-align: center;
   background-color: #00b6d8;
   border-radius: 15px;
-  color: white;
-}
+  color: white; }
 
 img {
-  border-radius: 15px;
-}
+  border-radius: 15px; }
 
 p {
-  color: gray;
-}
+  color: gray; }
 
 h2 {
-  font-family: "Open Sans";
-}
+  font-family: 'Open Sans'; }
 
 .our-team .img1 {
   grid-area: img1;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img2 {
   grid-area: img2;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img3 {
   grid-area: img3;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img4 {
   grid-area: img4;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img5 {
   grid-area: img5;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img6 {
   grid-area: img6;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img7 {
   grid-area: img7;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img8 {
   grid-area: img8;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .img8 > img {
-  width: 100px;
-}
+  width: 100px; }
 
 .our-team .img9 {
   grid-area: img9;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img10 {
   grid-area: img10;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img11 {
   grid-area: img11;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img12 {
   grid-area: img12;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img13 {
   grid-area: img13;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img14 {
   grid-area: img14;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
 
 .our-team .img15 {
   grid-area: img15;
   padding: 20px;
-  text-align: center;
-}
+  text-align: center; }
+
+/*# sourceMappingURL=nuestro_equipo.css.map */

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
 .our-philosophy {
   display: grid;
   grid-template-rows: repeat(4, auto);
@@ -8,8 +8,7 @@
   font-family: "Open Sans";
   max-width: 1300px;
   width: 90%;
-  margin: 130px auto;
-}
+  margin: 130px auto; }
 
 .our-philosophy .slogan {
   grid-area: slogan;
@@ -17,8 +16,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 10px;
   border-radius: 20px;
-  color: #00b6d8;
-}
+  color: #00b6d8; }
 
 .our-philosophy .our-vision {
   grid-area: vision;
@@ -26,8 +24,7 @@
   background-color: #00b6d8;
   padding: 20px;
   border-radius: 5px 30px 30px 5px;
-  color: white;
-}
+  color: white; }
 
 .our-philosophy .our-mission {
   grid-area: mission;
@@ -35,12 +32,10 @@
   text-align: justify;
   padding: 20px;
   border-radius: 30px 5px 5px 30px;
-  color: white;
-}
+  color: white; }
 
 .our-philosophy .our-mission > h1 {
-  text-align: right;
-}
+  text-align: right; }
 
 .our-philosophy .our-values {
   grid-area: values;
@@ -49,8 +44,7 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(7, auto);
   grid-template-areas: "values_title       values_title" "overcoming_title   overcoming" "excelence_title    excelence" "solidarity_title   solidarity" "integrity_title    integrity" "leadership_title   leadership" "img                img";
-  color: white;
-}
+  color: white; }
 
 .our-values .values {
   grid-area: values_title;
@@ -59,8 +53,7 @@
   padding: 10px;
   text-align: center;
   border-radius: 20px;
-  margin-top: 40px;
-}
+  margin-top: 40px; }
 
 .our-values .overcoming {
   grid-area: overcoming_title;
@@ -69,16 +62,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 0 0 0;
-}
+  border-radius: 20px 0 0 0; }
 
 .our-values .v1 {
   grid-area: overcoming;
   color: gray;
   border: 2px solid #00c800;
   padding: 20px;
-  border-radius: 0 20px 0 0;
-}
+  border-radius: 0 20px 0 0; }
 
 .our-values .excelence {
   grid-area: excelence_title;
@@ -87,16 +78,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 0 0 0;
-}
+  border-radius: 20px 0 0 0; }
 
 .our-values .v2 {
   grid-area: excelence;
   color: gray;
   border: 2px solid #00c800;
   padding: 20px;
-  border-radius: 0 20px 0 0;
-}
+  border-radius: 0 20px 0 0; }
 
 .our-values .solidarity {
   grid-area: solidarity_title;
@@ -105,16 +94,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 0 0 0;
-}
+  border-radius: 20px 0 0 0; }
 
 .our-values .v3 {
   grid-area: solidarity;
   color: gray;
   border: 2px solid #00c800;
   padding: 20px;
-  border-radius: 0 20px 0 0;
-}
+  border-radius: 0 20px 0 0; }
 
 .our-values .integrity {
   grid-area: integrity_title;
@@ -123,16 +110,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 0 0 0;
-}
+  border-radius: 20px 0 0 0; }
 
 .our-values .v4 {
   grid-area: integrity;
   color: gray;
   border: 2px solid #00c800;
   padding: 20px;
-  border-radius: 0 20px 0 0;
-}
+  border-radius: 0 20px 0 0; }
 
 .our-values .leadership {
   grid-area: leadership_title;
@@ -141,24 +126,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px 0 0 0;
-}
+  border-radius: 20px 0 0 0; }
 
 .our-values .v5 {
   grid-area: leadership;
   color: gray;
   border: 2px solid #00c800;
   padding: 20px;
-  border-radius: 0 20px 0 0;
-}
+  border-radius: 0 20px 0 0; }
 
 .our-values .image {
   grid-area: img;
-  margin: auto;
-}
+  margin: auto; }
 
 .our-values .image > img {
   border: 5px ridge #00c800;
   border-radius: 10px;
-  width: 350px;
-}
+  width: 350px; }
+
+/*# sourceMappingURL=nuestra_filosofia.css.map */
